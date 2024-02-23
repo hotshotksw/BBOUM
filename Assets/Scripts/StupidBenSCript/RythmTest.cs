@@ -18,15 +18,16 @@ public class RythmTest : MonoBehaviour
     }
     [SerializeField] List<Beat> beats;
 
-    [SerializeField] float turnTime = 4.0f;
+    [SerializeField] float turnTime = 15.0f;
+    [SerializeField] float beatTime = 0;
+    [SerializeField] int current = 0;
 
     public bool start = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        beatTime = beats[current].setOffTime;
     }
 
     // Deranged ben code
@@ -37,15 +38,15 @@ public class RythmTest : MonoBehaviour
             start = true;
         }
 
-        if(turnTime < 0)
-        {
-            start = false;
-        }
         if (start)
         {
 
-        }
+
+			if (turnTime < 0)
+			{
+				start = false;
+			}
+
+		}
     }
-
-
 }
