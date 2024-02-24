@@ -28,6 +28,8 @@ public class RythmTest : MonoBehaviour
     public bool start = false;
     [SerializeField] private float totalLevel = 0; // amount of level given to player for stat
 
+    [SerializeField] private int beatActivated; // if the beat is activated
+
     public FloatVariable rewardLevels; // stat that is rewards with level
 
     public TMP_Text text;// replace with dedicated ranking thing
@@ -63,55 +65,71 @@ public class RythmTest : MonoBehaviour
                 }
 			}
 
+			float midpoint = (beats[current].setOffTime * speedMod) * 0.5f;
+
 			if (Input.GetMouseButtonDown(0))
 			{
                 float test = 0;
-				float startpoint = (beats[current].setOffTime * speedMod);
-                float midpoint = startpoint * 0.5f;
-                
-                if (midpoint - beatTime < 0)
-                {
-                    test = MathF.Abs(midpoint-beatTime)/midpoint;
 
-
-					int prev = current - 1;
-					if (prev < 0)
+				if (beatActivated == 0)
+				{
+					if (midpoint - beatTime < 0)
 					{
-						prev = beats.Count - 1;
+						test = MathF.Abs(midpoint - beatTime) / midpoint;
+
+						beatActivated = 1;
+
+						int prev = current - 1;
+						if (prev < 0)
+						{
+							prev = beats.Count - 1;
+						}
+						beats[prev].beatEvent.RaiseEvent(beats[prev].stringtopass);
 					}
-					beats[prev].beatEvent.RaiseEvent(beats[prev].stringtopass);
+					else if (midpoint - beatTime > 0)
+					{
+						beatActivated = 2;
+						test = Mathf.Abs((beatTime / midpoint) - 1);
+
+						beats[current].beatEvent.RaiseEvent(beats[current].stringtopass);
+					}
+					test = (2 * test) - 1;
+
+					string howgood = "Bogus";
+
+					if (test > 0.9f)
+					{
+						howgood = "Ultimate!!!";
+					}
+					else if (test > 0.6f)
+					{
+						howgood = "Nice Form!!";
+					}
+					else if (test > 0.1f)
+					{
+						howgood = "Needs Work!";
+					}
+
+					text.text = beatTime + " / " + (beats[current].setOffTime * speedMod) + "\n" + howgood + ": " + test;
+					totalLevel += test;
+					if (totalLevel < 0)
+					{
+						totalLevel = 0;
+					}
 				}
-                else if (midpoint - beatTime > 0)
-                {
-                    test = Mathf.Abs((beatTime/midpoint) - 1);
-
-					beats[current].beatEvent.RaiseEvent(beats[current].stringtopass);
-				}
-                test = (2 * test) - 1;
-
-                string howgood = "Bogus";
-
-                if (test > 0.9f)
-                {
-					howgood = "Ultimate!!!";
-				} else if (test > 0.6f)
-                {
-					howgood = "Nice Form!!";
-				} else if (test > 0.1f)
-                {
-					howgood = "Needs Work!";
-				}
-
-                text.text = beatTime + " / " + startpoint + "\n" + howgood + ": " + test;
-                totalLevel += test;
-                if (totalLevel < 0)
-                {
-					totalLevel = 0;
-                }
 			}
 
 			if (beatTime <= 0)
             {
+				if (beatActivated == 1)
+				{
+					beatActivated = 2;
+				}
+				if (beatActivated == 2)
+				{
+					beatActivated = 1;
+				}
+
 				audioSource.PlayOneShot(beats[current].audio);
 				current++;
                 if (current >= beats.Count)
@@ -120,6 +138,15 @@ public class RythmTest : MonoBehaviour
                 }
                 beatTime = beats[current].setOffTime * speedMod;
             }
+
+			if (beatTime < midpoint && beatActivated == 1)
+			{
+				beatActivated = 0;
+			}
+			if (beatTime > midpoint && beatActivated == 2)
+			{
+				beatActivated = 0;
+			}
 		}
     }
 }
