@@ -238,6 +238,8 @@ GameObject:
   - component: {fileID: 682337465}
   - component: {fileID: 682337464}
   - component: {fileID: 682337463}
+  - component: {fileID: 682337468}
+  - component: {fileID: 682337469}
   m_Layer: 0
   m_Name: WorkOut
   m_TagString: Untagged
@@ -374,6 +376,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &682337468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682337462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff05b21ab52c8f4faa6f593fc85e86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseScale: {x: 0, y: 0, z: 0}
+  scaling: 0
+  a: 0
+  b: 0
+  bounceTimer: 0
+--- !u!114 &682337469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682337462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0744e0d4f4ced84eaf0a6eb1a235a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 0}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 682337468}
+        m_TargetAssemblyTypeName: Bounce, Assembly-CSharp
+        m_MethodName: beatBounce
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &729925355
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,23 +956,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f052f553abeb2f43b56819a333da87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
+  beatFloatEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
   beats:
   - setOffTime: 1
     audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
-    beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
     stringtopass: A1
+    beatStrength: 0
   - setOffTime: 1
     audio: {fileID: 8300000, guid: cb089be6e45db8e479ab7ad22577ce62, type: 3}
-    beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
     stringtopass: A1
+    beatStrength: 0
   - setOffTime: 1
     audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
-    beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
     stringtopass: A1
+    beatStrength: 0
   - setOffTime: 1
     audio: {fileID: 8300000, guid: cb089be6e45db8e479ab7ad22577ce62, type: 3}
-    beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
     stringtopass: A1
+    beatStrength: 0
   audioSource: {fileID: 6288523204303824587}
   InitialTime: 15
   beatTime: 0

@@ -14,9 +14,11 @@ public class RythmTest : MonoBehaviour
     {
         public float setOffTime; // time till the beat  plays
         public AudioClip audio; // the beat sound that plays
-        public StringEvent beatEvent; // event that happens when a beat is done
         public string stringtopass; // string that is passed into the beat event for animator to use
+        public float beatStrength; // string that is passed into the beat event for animator to use
     }
+    public StringEvent beatEvent; // event that happens when a beat is hit by the player. signifies a change in animation
+	public FloatEvent beatFloatEvent; // event that happens when a beat happens. does not matter if the player hits it on time.
 
     [SerializeField] List<Beat> beats; // list of repeating beats
     [SerializeField] AudioSource audioSource;
@@ -28,7 +30,7 @@ public class RythmTest : MonoBehaviour
     public bool start = false;
     [SerializeField] private float totalLevel = 0; // amount of level given to player for stat
 
-    [SerializeField] private int beatActivated; // if the beat is activated
+    [SerializeField] private int beatActivated; // if the beat is activated it is 
 
     public FloatVariable rewardLevels; // stat that is rewards with level
 
@@ -84,14 +86,14 @@ public class RythmTest : MonoBehaviour
 						{
 							prev = beats.Count - 1;
 						}
-						beats[prev].beatEvent.RaiseEvent(beats[prev].stringtopass);
+						beatEvent.RaiseEvent(beats[prev].stringtopass);
 					}
 					else if (midpoint - beatTime > 0)
 					{
 						beatActivated = 2;
 						test = Mathf.Abs((beatTime / midpoint) - 1);
 
-						beats[current].beatEvent.RaiseEvent(beats[current].stringtopass);
+						beatEvent.RaiseEvent(beats[current].stringtopass);
 					}
 					test = (2 * test) - 1;
 
@@ -101,7 +103,7 @@ public class RythmTest : MonoBehaviour
 					{
 						howgood = "Ultimate!!!";
 					}
-					else if (test > 0.6f)
+					else if (test > 0.5f)
 					{
 						howgood = "Nice Form!!";
 					}
@@ -130,6 +132,7 @@ public class RythmTest : MonoBehaviour
 					beatActivated = 1;
 				}
 
+				beatFloatEvent.RaiseEvent(beats[current].beatStrength);
 				audioSource.PlayOneShot(beats[current].audio);
 				current++;
                 if (current >= beats.Count)

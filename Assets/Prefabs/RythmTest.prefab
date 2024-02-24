@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f052f553abeb2f43b56819a333da87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
+  beatFloatEvent: {fileID: 0}
   beats:
   - setOffTime: 1
     audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
-    beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
     stringtopass: A1
+    beatStrength: 0.25
   audioSource: {fileID: 7906406411604747529}
   InitialTime: 15
   beatTime: 0
