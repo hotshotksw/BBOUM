@@ -17,6 +17,7 @@ public class RythmTest : MonoBehaviour
         public string stringtopass; // string that is passed into the beat event for animator to use
         public float beatStrength; // string that is passed into the beat event for animator to use
     }
+	public AudioClip Metronome; // sound that happens when every beat should be played
     public StringEvent beatEvent; // event that happens when a beat is hit by the player. signifies a change in animation
 	public FloatEvent beatFloatEvent; // event that happens when a beat happens. does not matter if the player hits it on time.
 	public FloatEvent newBeatEvent; // event that happens when a beat happens. does not matter if the player hits it on time.
@@ -32,6 +33,7 @@ public class RythmTest : MonoBehaviour
     [SerializeField] private float totalLevel = 0; // amount of level given to player for stat
 
     [SerializeField] private int beatActivated; // if the beat is activated it is 
+	private bool earlyBeat;
 
     public FloatVariable rewardLevels; // stat that is rewards with level
 
@@ -88,6 +90,8 @@ public class RythmTest : MonoBehaviour
 							prev = beats.Count - 1;
 						}
 						beatEvent.RaiseEvent(beats[prev].stringtopass);
+
+						audioSource.PlayOneShot(beats[prev].audio);
 					}
 					else if (midpoint - beatTime > 0)
 					{
@@ -95,6 +99,7 @@ public class RythmTest : MonoBehaviour
 						test = Mathf.Abs((beatTime / midpoint) - 1);
 
 						beatEvent.RaiseEvent(beats[current].stringtopass);
+						audioSource.PlayOneShot(beats[current].audio);
 					}
 					test = (2 * test) - 1;
 
@@ -111,6 +116,10 @@ public class RythmTest : MonoBehaviour
 					else if (test > 0.1f)
 					{
 						howgood = "Needs Work!";
+					} else
+					{
+						// if it is bogus
+
 					}
 
 					text.text = beatTime + " / " + (beats[current].setOffTime * speedMod) + "\n" + howgood + ": " + test;
@@ -124,29 +133,30 @@ public class RythmTest : MonoBehaviour
 
 			if (beatTime <= 0)
             {
-				if (beatActivated == 1)
-				{
-					beatActivated = 2;
-				}
 				if (beatActivated == 2)
 				{
 					beatActivated = 1;
 				}
-
+				earlyBeat = false;
 				beatFloatEvent.RaiseEvent(beats[current].beatStrength);
-				audioSource.PlayOneShot(beats[current].audio);
+				audioSource.PlayOneShot(Metronome);
 				current++;
                 if (current >= beats.Count)
                 {
                     current = 0;
                 }
-                beatTime = beats[current].setOffTime * speedMod;
-            }
+				beatTime = beats[current].setOffTime * speedMod;
+			}
 
 			if (beatTime < midpoint && beatActivated == 1)
 			{
 				beatActivated = 0;
-				newBeatEvent.RaiseEvent(beatTime);
+			}
+
+			if (beatTime < midpoint && !earlyBeat)
+			{
+				earlyBeat = true;
+				newBeatEvent.RaiseEvent(beatTime * 2);
 			}
 		}
     }
