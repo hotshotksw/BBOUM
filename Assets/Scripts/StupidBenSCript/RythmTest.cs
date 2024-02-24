@@ -118,6 +118,7 @@ public class RythmTest : MonoBehaviour
 						howgood = "Needs Work!";
 					} else
 					{
+						// if it is bogus
 
 					}
 
