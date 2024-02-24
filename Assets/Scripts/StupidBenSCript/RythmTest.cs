@@ -12,35 +12,41 @@ public class RythmTest : MonoBehaviour
     [Serializable]
     public struct Beat
     {
-        // 
-        public float setOffTime;
-        public AudioClip audio;
-        public float marginError;
+        public float setOffTime; // time till the beat  plays
+        public AudioClip audio; // the beat sound that plays
+        public StringEvent beatEvent; // event that happens when a beat is done
+        public string stringtopass; // string that is passed into the beat event for animator to use
     }
-    [SerializeField] List<Beat> beats;
+
+    [SerializeField] List<Beat> beats; // list of repeating beats
     [SerializeField] AudioSource audioSource;
-    [SerializeField] float turnTime = 15.0f;
-    [SerializeField] float beatTime = 0;
-    [SerializeField] int current = 0;
-    [SerializeField, Range(0.1f, 1f)] float speedMod = 1;
+    [SerializeField] float InitialTime = 15.0f; // initial time spent in the minigame
+    float turnTime; // the time that is spent in the minigame
+    [SerializeField] float beatTime = 0; // time till the next beat plays
+    [SerializeField] int current = 0; // current beat to be played
+    [SerializeField, Range(0.1f, 1f)] float speedMod = 1; // modifier for beat speed if we do speed up mechanic
     public bool start = false;
+    [SerializeField] private float totalLevel = 0; // amount of level given to player for stat
 
-    public TMP_Text text;
+    public FloatVariable rewardLevels; // stat that is rewards with level
 
-    // Start is called before the first frame update
-    void Start()
+    public TMP_Text text;// replace with dedicated ranking thing
+
+    public void Activate()
     {
-        beatTime = beats[current].setOffTime;
-    }
+		turnTime = InitialTime;
+		start = true;
+        totalLevel = 0;
+		current = 0;
+		beatTime = beats[current].setOffTime;
+	}
 
     // Deranged ben code
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !start)
         {
-            turnTime = 15;
-            start = true;
-            current = 0;
+            Activate();
         }
 
         if (start)
@@ -51,6 +57,10 @@ public class RythmTest : MonoBehaviour
 			if (turnTime <= 0)
 			{
 				start = false;
+                if (rewardLevels)
+                {
+                    rewardLevels.value += totalLevel;
+                }
 			}
 
 			if (Input.GetMouseButtonDown(0))
@@ -62,31 +72,48 @@ public class RythmTest : MonoBehaviour
                 if (midpoint - beatTime < 0)
                 {
                     test = MathF.Abs(midpoint-beatTime)/midpoint;
-                } else if (midpoint - beatTime > 0)
+
+
+					int prev = current - 1;
+					if (prev < 0)
+					{
+						prev = beats.Count - 1;
+					}
+					beats[prev].beatEvent.RaiseEvent(beats[prev].stringtopass);
+				}
+                else if (midpoint - beatTime > 0)
                 {
                     test = Mathf.Abs((beatTime/midpoint) - 1);
-                }
 
-                string howgood = "Kill yourself...";
+					beats[current].beatEvent.RaiseEvent(beats[current].stringtopass);
+				}
+                test = (2 * test) - 1;
 
-                if (test > 0.95f)
+                string howgood = "Bogus";
+
+                if (test > 0.9f)
                 {
 					howgood = "Ultimate!!!";
-				} else if (test > 0.8f)
+				} else if (test > 0.6f)
                 {
 					howgood = "Nice Form!!";
-				} else if (test > 0.3f)
+				} else if (test > 0.1f)
                 {
 					howgood = "Needs Work!";
 				}
 
                 text.text = beatTime + " / " + startpoint + "\n" + howgood + ": " + test;
+                totalLevel += test;
+                if (totalLevel < 0)
+                {
+					totalLevel = 0;
+                }
 			}
 
 			if (beatTime <= 0)
             {
-                audioSource.PlayOneShot(beats[current].audio);
-                current++;
+				audioSource.PlayOneShot(beats[current].audio);
+				current++;
                 if (current >= beats.Count)
                 {
                     current = 0;
