@@ -116,6 +116,9 @@ public class RythmTest : MonoBehaviour
 					else if (test > 0.1f)
 					{
 						howgood = "Needs Work!";
+					} else
+					{
+
 					}
 
 					text.text = beatTime + " / " + (beats[current].setOffTime * speedMod) + "\n" + howgood + ": " + test;

@@ -42,16 +42,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2806640586504567939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f052f553abeb2f43b56819a333da87e, type: 3}
+  m_Script: {fileID: 11500000, guid: 09e93782e2da1ed479f134741e8bf472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Metronome: {fileID: 8300000, guid: b8d5b46f49712cd4f87a0bdcfec30a19, type: 3}
   beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
-  beatFloatEvent: {fileID: 0}
+  beatFloatEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
+  newBeatEvent: {fileID: 11400000, guid: 27c4d51baa14d4b40b84af5d091d95bf, type: 2}
   beats:
   - setOffTime: 1
     audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
     stringtopass: A1
-    beatStrength: 0.25
+    beatStrength: 0.2
   audioSource: {fileID: 7906406411604747529}
   InitialTime: 15
   beatTime: 0
