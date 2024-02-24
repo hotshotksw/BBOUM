@@ -5,9 +5,13 @@ using UnityEngine;
 public class MeteorMinigame : MonoBehaviour
 {
     [SerializeField] int powerlevel;
+	[SerializeField] float playerMotion;
 
     [SerializeField] float desiredMotion;
     [SerializeField] float motion;
+
+	[SerializeField] float movingPower;
+
     [SerializeField] float position;
 
     [SerializeField] bool friendship;
@@ -16,37 +20,44 @@ public class MeteorMinigame : MonoBehaviour
     [SerializeField] Transform winpos;
     [SerializeField] Transform losepos;
 
+    [SerializeField] float speedmod = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        desiredMotion = desiredMotion + (powerlevel/2);
+        motion = desiredMotion * (powerlevel/100);
+        speedmod = 0.1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(winpos.position, losepos.position, position * 0.01f);
-
-        position += motion * Time.deltaTime;
-
-        float comeback = (desiredMotion - motion);
-        if (comeback > 50)
+        if (position < 100)
         {
-            comeback = 50;
-        }
+            speedmod = Mathf.Lerp(speedmod, 1, 0.05f * Time.deltaTime);
 
-		motion = Mathf.Lerp(motion, desiredMotion, Time.deltaTime * (1 + comeback));
+			transform.position = Vector3.Lerp(winpos.position, losepos.position, position * 0.01f);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            motion = desiredMotion-powerlevel;
-        }
+			position += movingPower * Time.deltaTime * speedmod;
 
-        if (position > 90f && friendship)
-        {
-            motion = -frienshipPower;
-            powerlevel *= 2;
-            friendship = false;
-        }
+			movingPower = motion - playerMotion;
+
+            motion = Mathf.Lerp(motion, desiredMotion, 0.75f * Time.deltaTime);
+
+            playerMotion = Mathf.Lerp(playerMotion, 0, (playerMotion/motion) * Time.deltaTime);
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				playerMotion += powerlevel;
+			}
+
+			if (position > 90f && friendship)
+			{
+                motion = playerMotion;
+				playerMotion += frienshipPower;
+				powerlevel *= 2;
+				friendship = false;
+			}
+		}
     }
 }

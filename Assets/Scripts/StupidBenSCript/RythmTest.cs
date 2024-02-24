@@ -19,6 +19,7 @@ public class RythmTest : MonoBehaviour
     }
     public StringEvent beatEvent; // event that happens when a beat is hit by the player. signifies a change in animation
 	public FloatEvent beatFloatEvent; // event that happens when a beat happens. does not matter if the player hits it on time.
+	public FloatEvent newBeatEvent; // event that happens when a beat happens. does not matter if the player hits it on time.
 
     [SerializeField] List<Beat> beats; // list of repeating beats
     [SerializeField] AudioSource audioSource;
@@ -145,10 +146,7 @@ public class RythmTest : MonoBehaviour
 			if (beatTime < midpoint && beatActivated == 1)
 			{
 				beatActivated = 0;
-			}
-			if (beatTime > midpoint && beatActivated == 2)
-			{
-				beatActivated = 0;
+				newBeatEvent.RaiseEvent(beatTime);
 			}
 		}
     }
