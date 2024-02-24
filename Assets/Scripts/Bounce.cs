@@ -8,9 +8,9 @@ public class Bounce : MonoBehaviour
 
 	[SerializeField] bool scaling; // if the object should be bouncing
 	[SerializeField, Range(1, Mathf.Infinity)] float bounceSpeed; // how long the bounce should be       how the equation uses it -> (1/bounceSpeed) * bounceTimer
-	[SerializeField] float a; // a for the equation
-	[SerializeField] float b; // b for the equation
-	[SerializeField] float bounceTimer; // time
+	float a; // a for the equation
+	float b; // b for the equation
+	float bounceTimer; // time
 
 	private void Start()
 	{

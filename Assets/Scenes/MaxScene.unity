@@ -256,37 +256,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &205887576
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 205887577}
-  m_Layer: 0
-  m_Name: end of bar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &205887577
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205887576}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2041686581}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &682337462
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,10 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseScale: {x: 0, y: 0, z: 0}
   scaling: 0
-  bounceSpeed: 20
-  a: 0
-  b: 0
-  bounceTimer: 0
+  bounceSpeed: 100
 --- !u!114 &682337469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,7 +1006,6 @@ Transform:
   - {fileID: 2383575297338872448}
   - {fileID: 729925360}
   - {fileID: 682337467}
-  - {fileID: 2041686581}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1964238783
@@ -1182,83 +1147,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 779022972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2041686580
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2041686581}
-  - component: {fileID: 2041686582}
-  m_Layer: 0
-  m_Name: BeatBar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2041686581
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041686580}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.15, y: 2.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2075328780}
-  - {fileID: 205887577}
-  m_Father: {fileID: 1571733838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2041686582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041686580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e4770cae50302c45be13cd6cddeb1bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2075328779
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2075328780}
-  m_Layer: 0
-  m_Name: Star of Bar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2075328780
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075328779}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2041686581}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2021923314654166849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,22 +1189,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 2021923314654166849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f052f553abeb2f43b56819a333da87e, type: 3}
+  m_Script: {fileID: 11500000, guid: 09e93782e2da1ed479f134741e8bf472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Metronome: {fileID: 8300000, guid: b8d5b46f49712cd4f87a0bdcfec30a19, type: 3}
   beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
   beatFloatEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
-  newBeatEvent: {fileID: 0}
+  newBeatEvent: {fileID: 11400000, guid: 27c4d51baa14d4b40b84af5d091d95bf, type: 2}
   beats:
   - setOffTime: 1
     audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
     stringtopass: A1
     beatStrength: 0.2
-  - setOffTime: 0.5
+  - setOffTime: 1
     audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
     stringtopass: A1
     beatStrength: 0.3
-  - setOffTime: 1
+  - setOffTime: 0.5
+    audio: {fileID: 8300000, guid: cb089be6e45db8e479ab7ad22577ce62, type: 3}
+    stringtopass: A1
+    beatStrength: 0.3
+  - setOffTime: 0.5
+    audio: {fileID: 8300000, guid: cb089be6e45db8e479ab7ad22577ce62, type: 3}
+    stringtopass: A1
+    beatStrength: 0.3
+  - setOffTime: 0.5
     audio: {fileID: 8300000, guid: cb089be6e45db8e479ab7ad22577ce62, type: 3}
     stringtopass: A1
     beatStrength: 0.3
