@@ -1846,12 +1846,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c418e2b6be7acc647b562ccc073e6be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Game_Buttons: {fileID: 556049618}
+  Title_Screen: {fileID: 0}
+  End_Screen: {fileID: 0}
+  Game_Buttons:
+  - {fileID: 388691066}
+  - {fileID: 73141634}
+  - {fileID: 55793130}
+  - {fileID: 79294850}
   Health_Minigame: {fileID: 1977861990}
   Strength_Minigame: {fileID: 2145703678}
   Stamina_Minigame: {fileID: 239143037}
   Friendship_Minigame: {fileID: 1301764180}
-  MinigameType: {fileID: 0}
+  MinigameEndEvent: {fileID: 0}
   state: 1
 --- !u!1 &1450484462
 GameObject:

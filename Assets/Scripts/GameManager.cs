@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Title_Screen;
     [SerializeField] GameObject End_Screen;
     // Object for buttons, can grab them all with this??
-    [SerializeField] GameObject Game_Buttons;
+    [SerializeField] List<GameObject> Game_Buttons; // List of buttons
 
     [Header("Minigames")]
     // Minigame Parent Objects
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Friendship_Minigame;
 
     [Header("Events")]
-    [SerializeField] GameObjectEvent MinigameType;
+    [SerializeField] GameObjectEvent MinigameEndEvent; // Event that, when raised, ends the minigame
 
     public enum GameState
     {
@@ -54,6 +56,12 @@ public class GameManager : MonoBehaviour
                 }
             case GameState.Minigame:
                 {
+
+                    if(Input.GetKeyDown(KeyCode.Space))
+                    {
+                        OnExitMinigame();
+                    }
+
                     break;
                 }
             case GameState.Finale:
@@ -67,23 +75,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+// OnClicks for buttons
+
     public void ToHealthGame()
     {
+        disableButtons();
         Health_Minigame.SetActive(true);
         state = GameState.Minigame;
     }
     public void ToStrengthGame()
     {
+        disableButtons();
         Strength_Minigame.SetActive(true);
         state = GameState.Minigame;
     }
     public void ToStaminaGame()
     {
+        disableButtons();
         Stamina_Minigame?.SetActive(true);
         state = GameState.Minigame;
     }
     public void ToFriendshipGame()
     {
+        disableButtons();
         Friendship_Minigame.SetActive(true);
         state = GameState.Minigame;
     }
@@ -96,8 +110,7 @@ public class GameManager : MonoBehaviour
         Stamina_Minigame.SetActive(false);
         Friendship_Minigame.SetActive(false);
 
-
-        Game_Buttons.SetActive(true);
+        enableButtons();
 
         state = GameState.Menu;
     }
@@ -109,7 +122,6 @@ public class GameManager : MonoBehaviour
 
     public void ToTitle()
     {
-        Game_Buttons.SetActive(false);
         state = GameState.Title;
     }
 
@@ -118,4 +130,31 @@ public class GameManager : MonoBehaviour
         state = GameState.EndScreen;
     }
 
+// Utiliy Functions
+
+    // Disables all the buttons on the Games_Button list
+    private void disableButtons()
+    {
+        foreach (var obj in Game_Buttons)
+        {
+            if (obj.TryGetComponent(out Button button))
+            {
+                button.enabled = false;
+                button.image.color = new Color(0.7f, 0.7f, 0.7f);
+            }
+        }
+    }
+    // Enables all the buttons on the Games_Button list
+    private void enableButtons()
+    {
+        foreach (var obj in Game_Buttons)
+        {
+            if (obj.TryGetComponent(out Button button))
+            {
+                button.enabled = true;
+                button.image.color = Color.white;
+                
+            }
+        }
+    }
 }
