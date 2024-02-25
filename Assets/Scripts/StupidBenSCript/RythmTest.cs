@@ -39,6 +39,7 @@ public class RythmTest : MonoBehaviour
     public FloatVariable rewardLevels; // stat that is rewards with level
 
 	[SerializeField] VoidEvent EndMinigameEvent;
+	[SerializeField] VoidEvent UpdateBarEvent;
 
 	[SerializeField] SpriteSequencer countdown;
 	[SerializeField] EvaluationScript evaluation;
@@ -67,6 +68,7 @@ public class RythmTest : MonoBehaviour
                 if (rewardLevels)
                 {
                     rewardLevels.value += totalLevel;
+					UpdateBarEvent.RaiseEvent();
                 }
 				// End Minigame
 				audioSource.Stop();
