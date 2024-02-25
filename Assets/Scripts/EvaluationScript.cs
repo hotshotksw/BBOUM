@@ -19,7 +19,7 @@ public class EvaluationScript : MonoBehaviour
 
     public void Evaluate(float eval)
     {
-
+		spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
 
 		if (eval > 0.9f)
 		{
@@ -37,5 +37,14 @@ public class EvaluationScript : MonoBehaviour
 		{
 			spriteRenderer.sprite = bogus;
 		}
+
+		StopAllCoroutines();
+		StartCoroutine(FadeAway());
+	}
+
+	IEnumerator FadeAway()
+	{
+		yield return new WaitForSeconds(0.5f);
+		spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
 	}
 }

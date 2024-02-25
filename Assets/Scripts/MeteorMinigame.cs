@@ -20,6 +20,10 @@ public class MeteorMinigame : MonoBehaviour
 
     [SerializeField] float position;
 
+    [SerializeField] private SpriteRenderer pushin;
+    [SerializeField] private Sprite friend;
+    [SerializeField] private Sprite nofriend;
+
     [SerializeField] bool friendshipActive;
     [SerializeField] float frienshipPower;
 
@@ -48,6 +52,8 @@ public class MeteorMinigame : MonoBehaviour
         }
 
         position = 40;
+
+        pushin.sprite = nofriend;
 
 		music.Play();
 
@@ -84,6 +90,7 @@ public class MeteorMinigame : MonoBehaviour
 				playerMotion += frienshipPower;
 				powerlevel *= 1.5f;
 				friendshipActive = false;
+                pushin.sprite = friend;
 			}
 
 			if (position > 98f)
