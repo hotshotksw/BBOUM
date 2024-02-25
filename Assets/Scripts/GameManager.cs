@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Strength_Minigame;
     [SerializeField] GameObject Stamina_Minigame;
     [SerializeField] GameObject Friendship_Minigame;
+    [SerializeField] GameObject Meteor_Minigame;
 
     [Header("Events")]
     //[SerializeField] GameObjectEvent MinigameEndEvent; // Event that, when raised, ends the minigame
@@ -159,8 +160,10 @@ public class GameManager : MonoBehaviour
     public void ToFinale()
     {
         state = GameState.Finale;
-        Menu_Screen.SetActive(false);
-        ToEndScreen();
+		IdleMain.SetActive(false);
+		Menu_Screen.SetActive(false);
+        Meteor_Minigame.SetActive(true);
+        //ToEndScreen();
     }
 
     public void ToEndScreen()
