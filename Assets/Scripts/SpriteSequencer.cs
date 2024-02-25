@@ -25,4 +25,10 @@ public class SpriteSequencer : MonoBehaviour
 
 		spriteRenderer.sprite = sprites[selection];
 	}
+
+	public void Reset()
+	{
+		selection = 0;
+		spriteRenderer.sprite = sprites[selection];
+	}
 }
