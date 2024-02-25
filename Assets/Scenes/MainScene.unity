@@ -132,7 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 36562221}
+  - component: {fileID: 36562225}
   - component: {fileID: 36562223}
+  - component: {fileID: 36562224}
   - component: {fileID: 36562222}
   m_Layer: 0
   m_Name: StaminaMinigame
@@ -286,7 +288,51 @@ MonoBehaviour:
   rewardLevels: {fileID: 11400000, guid: fadba572d94641b4da36262da01cc5ee, type: 2}
   text: {fileID: 707094740}
   EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
+  UpdateBarEvent: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
   countdown: {fileID: 1050596988}
+--- !u!114 &36562224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36562220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 36562225}
+        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
+        m_MethodName: OnUpdateSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &36562225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36562220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statVariable: {fileID: 11400000, guid: fadba572d94641b4da36262da01cc5ee, type: 2}
+  updateEvent: {fileID: 36562224}
+  slider: {fileID: 2100935665}
 --- !u!1 &79342908
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +897,7 @@ MonoBehaviour:
   winEvent: {fileID: 0}
   loseEvent: {fileID: 0}
   bounceEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
+  music: {fileID: 0}
 --- !u!212 &308919958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1783,7 +1830,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 575279469}
+  - component: {fileID: 575279474}
   - component: {fileID: 575279471}
+  - component: {fileID: 575279473}
   - component: {fileID: 575279472}
   m_Layer: 0
   m_Name: StrengthMinigame
@@ -1841,6 +1890,7 @@ MonoBehaviour:
   rewardLevels: {fileID: 11400000, guid: 98321c0e1552b7d479d905f5894156f7, type: 2}
   text: {fileID: 707094740}
   EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
+  UpdateBarEvent: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
   countdown: {fileID: 1050596988}
 --- !u!82 &575279472
 AudioSource:
@@ -1938,6 +1988,49 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &575279473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575279468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 575279474}
+        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
+        m_MethodName: OnUpdateSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &575279474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575279468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statVariable: {fileID: 11400000, guid: 98321c0e1552b7d479d905f5894156f7, type: 2}
+  updateEvent: {fileID: 575279473}
+  slider: {fileID: 1416609095}
 --- !u!1 &582588849
 GameObject:
   m_ObjectHideFlags: 0
@@ -5080,7 +5173,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1839412436}
   m_HandleRect: {fileID: 0}
@@ -5142,7 +5235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20784314, g: 0.8352941, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5733,7 +5826,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1600733985}
+  - component: {fileID: 1600733989}
   - component: {fileID: 1600733987}
+  - component: {fileID: 1600733988}
   - component: {fileID: 1600733986}
   m_Layer: 0
   m_Name: HealthMinigame
@@ -5888,7 +5983,51 @@ MonoBehaviour:
   rewardLevels: {fileID: 11400000, guid: 34137884df353c2448b519d6080487ad, type: 2}
   text: {fileID: 707094740}
   EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
+  UpdateBarEvent: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
   countdown: {fileID: 1050596988}
+--- !u!114 &1600733988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600733984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1600733989}
+        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
+        m_MethodName: OnUpdateSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1600733989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600733984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statVariable: {fileID: 11400000, guid: 34137884df353c2448b519d6080487ad, type: 2}
+  updateEvent: {fileID: 1600733988}
+  slider: {fileID: 2118778137}
 --- !u!1 &1612583553
 GameObject:
   m_ObjectHideFlags: 0
@@ -5939,7 +6078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20941077, g: 0.836478, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6210,7 +6349,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1443533214}
   m_HandleRect: {fileID: 0}
@@ -6272,7 +6411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20784314, g: 0.8352941, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6506,7 +6645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20784314, g: 0.8352941, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7239,7 +7378,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1612583554}
   m_HandleRect: {fileID: 0}
@@ -7260,7 +7399,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2105081367}
+  - component: {fileID: 2105081371}
   - component: {fileID: 2105081369}
+  - component: {fileID: 2105081370}
   - component: {fileID: 2105081368}
   m_Layer: 0
   m_Name: FriendshipMinigame
@@ -7415,7 +7556,51 @@ MonoBehaviour:
   rewardLevels: {fileID: 11400000, guid: 974bde0d0f06e7c4b82f3202c63d9417, type: 2}
   text: {fileID: 707094740}
   EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
+  UpdateBarEvent: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
   countdown: {fileID: 1050596988}
+--- !u!114 &2105081370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105081366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2105081371}
+        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
+        m_MethodName: OnUpdateSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2105081371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105081366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statVariable: {fileID: 11400000, guid: 974bde0d0f06e7c4b82f3202c63d9417, type: 2}
+  updateEvent: {fileID: 2105081370}
+  slider: {fileID: 1654321464}
 --- !u!1 &2118778135
 GameObject:
   m_ObjectHideFlags: 0
@@ -7494,7 +7679,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1659457612}
   m_HandleRect: {fileID: 0}

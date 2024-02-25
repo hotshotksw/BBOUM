@@ -41,6 +41,7 @@ public class RythmTest : MonoBehaviour
     public TMP_Text text;// replace with dedicated ranking thing
 
 	[SerializeField] VoidEvent EndMinigameEvent;
+	[SerializeField] VoidEvent UpdateBarEvent;
 
 	[SerializeField] SpriteSequencer countdown;
 
@@ -68,6 +69,7 @@ public class RythmTest : MonoBehaviour
                 if (rewardLevels)
                 {
                     rewardLevels.value += totalLevel;
+					UpdateBarEvent.RaiseEvent();
                 }
 				// End Minigame
 				audioSource.Stop();
