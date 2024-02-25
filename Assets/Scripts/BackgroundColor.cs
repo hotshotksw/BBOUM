@@ -20,6 +20,7 @@ public class BackgroundColor : MonoBehaviour
 		colorArray[2] = new Color32(149, 255, 137, 255); //green health
 		colorArray[3] = new Color32(57, 157, 46, 255); //blue stamina
 		colorArray[4] = new Color32(255, 103, 190, 255); //pink friendship
+		colorArray[5] = new Color32(174, 64, 54, 255); //red final
 
 		color = colorArray[0];
 	}
@@ -48,5 +49,10 @@ public class BackgroundColor : MonoBehaviour
 	public void OnFriendshipChange()
 	{
 		color = colorArray[4];
+	}
+
+	public void OnFinalChange()
+	{
+		color = colorArray[5];
 	}
 }
