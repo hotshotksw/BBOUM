@@ -182,8 +182,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ff0999ea96c40eb42b4625d4a85a7163, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: a74e4746272c6d54f98beeb79a954cd8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -206,10 +206,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 31670222}
-  ultimate: {fileID: 0}
-  niceform: {fileID: 0}
-  needswork: {fileID: 0}
-  bogus: {fileID: 0}
+  ultimate: {fileID: 21300000, guid: a74e4746272c6d54f98beeb79a954cd8, type: 3}
+  niceform: {fileID: 21300000, guid: caeb8f5f321dc914b9705f559b5b2348, type: 3}
+  needswork: {fileID: 21300000, guid: ebf97fc75bbd7ae419eaeb978de35374, type: 3}
+  bogus: {fileID: 21300000, guid: 8f1b8ee41ede04d46be84bb5f9ca9fd8, type: 3}
 --- !u!4 &31670224
 Transform:
   m_ObjectHideFlags: 0
@@ -1348,7 +1348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6965685861784625118, guid: 221a2add0317f9e42b22a782ce0141fb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2020,7 +2020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779022972
 Transform:
   m_ObjectHideFlags: 0
@@ -4061,7 +4061,7 @@ MonoBehaviour:
   EndMinigameEvent: {fileID: 0}
   UpdateBarEvent: {fileID: 0}
   countdown: {fileID: 48427253}
-  evaluation: {fileID: 0}
+  evaluation: {fileID: 31670223}
 --- !u!4 &2010937696695108316
 Transform:
   m_ObjectHideFlags: 0
