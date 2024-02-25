@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 36562220}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -774.0909, y: -477.33243, z: 9.973506}
+  m_LocalPosition: {x: -754.0909, y: -477.33243, z: 9.973506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -167,11 +167,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 2cab116f9c4ec5c4ab68dceb4332e17c, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -270,8 +270,8 @@ MonoBehaviour:
   beatFloatEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
   newBeatEvent: {fileID: 11400000, guid: 27c4d51baa14d4b40b84af5d091d95bf, type: 2}
   beats:
-  - setOffTime: 1
-    audio: {fileID: 0}
+  - setOffTime: 0.6
+    audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
     stringtopass: A1
     beatStrength: 0.25
   audioSource: {fileID: 36562222}
@@ -2595,7 +2595,7 @@ GameObject:
   - component: {fileID: 790805280}
   - component: {fileID: 790805281}
   m_Layer: 0
-  m_Name: Square
+  m_Name: ramen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2611,7 +2611,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15.51, y: 10, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1600733985}
@@ -2657,8 +2657,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.92941314, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 895b70e5958efef48a67c90d2522e5ab, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
