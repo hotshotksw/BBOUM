@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 36562221}
   - component: {fileID: 36562223}
-  - component: {fileID: 36562224}
   - component: {fileID: 36562222}
   m_Layer: 0
   m_Name: StaminaMinigame
@@ -290,34 +289,6 @@ MonoBehaviour:
   UpdateBarEvent: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
   countdown: {fileID: 1050596988}
   evaluation: {fileID: 2078770703}
---- !u!114 &36562224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 36562220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
-  listener:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
-        m_MethodName: OnUpdateSlider
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &50328893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,6 +2549,7 @@ GameObject:
   - component: {fileID: 529727732}
   - component: {fileID: 529727731}
   - component: {fileID: 529727734}
+  - component: {fileID: 529727735}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -2713,8 +2685,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statVariable: {fileID: 11400000, guid: fadba572d94641b4da36262da01cc5ee, type: 2}
-  updateEvent: {fileID: 36562224}
+  updateEvent: {fileID: 0}
   slider: {fileID: 2100935665}
+--- !u!114 &529727735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529727729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 529727734}
+        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
+        m_MethodName: OnUpdateSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &575279468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2725,7 +2725,6 @@ GameObject:
   m_Component:
   - component: {fileID: 575279469}
   - component: {fileID: 575279471}
-  - component: {fileID: 575279473}
   - component: {fileID: 575279472}
   m_Layer: 0
   m_Name: StrengthMinigame
@@ -2882,34 +2881,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &575279473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575279468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
-  listener:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
-        m_MethodName: OnUpdateSlider
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &576799566
 GameObject:
   m_ObjectHideFlags: 0
@@ -3699,6 +3670,7 @@ GameObject:
   - component: {fileID: 758498393}
   - component: {fileID: 758498392}
   - component: {fileID: 758498395}
+  - component: {fileID: 758498396}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -3834,8 +3806,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statVariable: {fileID: 11400000, guid: 34137884df353c2448b519d6080487ad, type: 2}
-  updateEvent: {fileID: 1600733988}
+  updateEvent: {fileID: 0}
   slider: {fileID: 2118778137}
+--- !u!114 &758498396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758498390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758498395}
+        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
+        m_MethodName: OnUpdateSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &772242724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4421,6 +4421,7 @@ GameObject:
   - component: {fileID: 842412424}
   - component: {fileID: 842412423}
   - component: {fileID: 842412426}
+  - component: {fileID: 842412427}
   m_Layer: 5
   m_Name: Strength
   m_TagString: Untagged
@@ -4556,8 +4557,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statVariable: {fileID: 11400000, guid: 98321c0e1552b7d479d905f5894156f7, type: 2}
-  updateEvent: {fileID: 575279473}
+  updateEvent: {fileID: 0}
   slider: {fileID: 1416609095}
+--- !u!114 &842412427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842412421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 842412426}
+        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
+        m_MethodName: OnUpdateSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &867729898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4571,6 +4600,7 @@ GameObject:
   - component: {fileID: 867729901}
   - component: {fileID: 867729900}
   - component: {fileID: 867729903}
+  - component: {fileID: 867729904}
   m_Layer: 5
   m_Name: Friendship
   m_TagString: Untagged
@@ -4706,8 +4736,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statVariable: {fileID: 11400000, guid: 974bde0d0f06e7c4b82f3202c63d9417, type: 2}
-  updateEvent: {fileID: 2105081370}
+  updateEvent: {fileID: 0}
   slider: {fileID: 1654321464}
+--- !u!114 &867729904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867729898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 867729903}
+        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
+        m_MethodName: OnUpdateSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &912847317
 GameObject:
   m_ObjectHideFlags: 0
@@ -8936,7 +8994,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1600733985}
   - component: {fileID: 1600733987}
-  - component: {fileID: 1600733988}
   - component: {fileID: 1600733986}
   m_Layer: 0
   m_Name: HealthMinigame
@@ -9093,34 +9150,6 @@ MonoBehaviour:
   UpdateBarEvent: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
   countdown: {fileID: 1050596988}
   evaluation: {fileID: 2078770703}
---- !u!114 &1600733988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600733984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
-  listener:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
-        m_MethodName: OnUpdateSlider
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1612583553
 GameObject:
   m_ObjectHideFlags: 0
@@ -12209,7 +12238,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2105081367}
   - component: {fileID: 2105081369}
-  - component: {fileID: 2105081370}
   - component: {fileID: 2105081368}
   m_Layer: 0
   m_Name: FriendshipMinigame
@@ -12366,34 +12394,6 @@ MonoBehaviour:
   UpdateBarEvent: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
   countdown: {fileID: 1050596988}
   evaluation: {fileID: 2078770703}
---- !u!114 &2105081370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105081366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
-  listener:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
-        m_MethodName: OnUpdateSlider
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2108661974
 GameObject:
   m_ObjectHideFlags: 0
