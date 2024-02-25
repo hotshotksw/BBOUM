@@ -41,11 +41,13 @@ public class RythmTest : MonoBehaviour
 
     public void Activate()
     {
-		turnTime = InitialTime;
 		start = true;
+		turnTime = InitialTime;
         totalLevel = 0;
 		current = 0;
+		earlyBeat = false;
 		beatTime = beats[current].setOffTime;
+		//newBeatEvent.RaiseEvent(beatTime * 2);
 	}
 
     // Deranged ben code
@@ -119,7 +121,6 @@ public class RythmTest : MonoBehaviour
 					} else
 					{
 						// if it is bogus
-
 					}
 
 					text.text = beatTime + " / " + (beats[current].setOffTime * speedMod) + "\n" + howgood + ": " + test;
