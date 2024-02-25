@@ -42,11 +42,11 @@ public class MeteorMinigame : MonoBehaviour
     void OnEnable()
     {
         powerlevel = 1;
-        powerlevel += (Mathf.Min(strength.value, 40)/40) * maxlevelpower;
-        powerlevel += (Mathf.Min(stamina.value, 40) / 40) * maxlevelpower;
-        powerlevel += (Mathf.Min(health.value, 40) / 40) * maxlevelpower;
-        powerlevel += (Mathf.Min(friendship.value, 40) / 40) * maxlevelpower;
-        if (friendship.value >= 40)
+        powerlevel += (Mathf.Min(strength.value, 50)/50) * maxlevelpower;
+        powerlevel += (Mathf.Min(stamina.value, 50) / 50) * maxlevelpower;
+        powerlevel += (Mathf.Min(health.value, 50) / 50) * maxlevelpower;
+        powerlevel += (Mathf.Min(friendship.value, 50) / 50) * maxlevelpower;
+        if (friendship.value >= 50)
         {
             friendshipActive = true;
         }

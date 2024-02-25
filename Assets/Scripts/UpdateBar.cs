@@ -12,6 +12,6 @@ public class UpdateBar : MonoBehaviour
 
     public void OnUpdateSlider()
     {
-        slider.value = statVariable.value / 40;
+        slider.value = statVariable.value / 50;
     }
 }

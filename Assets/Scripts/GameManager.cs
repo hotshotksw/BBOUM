@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     [Header("User Interface")]
     [SerializeField] GameObject Title_Screen;
     [SerializeField] GameObject Menu_Screen;
-    [SerializeField] GameObject End_Screen;
+    [SerializeField] GameObject Lose_Screen;
+    [SerializeField] GameObject Win_Screen;
     [SerializeField] GameObject IdleMain;
     // Object for buttons, can grab them all with this??
     [SerializeField] List<GameObject> Game_Buttons; // List of buttons
@@ -88,7 +89,7 @@ public class GameManager : MonoBehaviour
                 }
             case GameState.EndScreen:
                 {
-                    End_Screen.SetActive(true);
+                    //End_Screen.SetActive(true);
                     break;
                 }
         }
@@ -149,7 +150,8 @@ public class GameManager : MonoBehaviour
     public void ToTitle()
     {
         state = GameState.Title;
-        End_Screen.SetActive(false);
+        Lose_Screen.SetActive(false);
+        Win_Screen.SetActive(false);
         Menu_Screen.SetActive(false);
     }
 
@@ -188,18 +190,22 @@ public class GameManager : MonoBehaviour
             Friendship_Minigame.SetActive(false);
 			Friendship_Minigame.GetComponent<RythmTest>().ForceStop();
 		}
-		//ToEndScreen();
 	}
+
+    public void ToLoseScreen()
+    {
+
+    }
+
+    public void ToWinScreen()
+    {
+
+    }
 
     public void ToMeteor()
     {
         Meteor_Cutscene.SetActive(false);
         Meteor_Minigame.SetActive(true);
-    }
-
-	public void ToEndScreen()
-    {
-        state = GameState.EndScreen;
     }
 
 // Utiliy Functions
