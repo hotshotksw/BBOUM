@@ -39,6 +39,8 @@ public class RythmTest : MonoBehaviour
 
     public TMP_Text text;// replace with dedicated ranking thing
 
+	[SerializeField] VoidEvent EndMinigameEvent;
+
     public void Activate()
     {
 		start = true;
@@ -50,7 +52,6 @@ public class RythmTest : MonoBehaviour
 		//newBeatEvent.RaiseEvent(beatTime * 2);
 	}
 
-    // Deranged ben code
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !start)
@@ -70,6 +71,8 @@ public class RythmTest : MonoBehaviour
                 {
                     rewardLevels.value += totalLevel;
                 }
+				// End Minigame
+				EndMinigameEvent.RaiseEvent();
 			}
 
 			float midpoint = (beats[current].setOffTime * speedMod) * 0.5f;

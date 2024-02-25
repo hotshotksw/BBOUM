@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Friendship_Minigame;
 
     [Header("Events")]
-    [SerializeField] GameObjectEvent MinigameEndEvent; // Event that, when raised, ends the minigame
+    //[SerializeField] GameObjectEvent MinigameEndEvent; // Event that, when raised, ends the minigame
     [SerializeField] VoidEvent healthColorEvent; //the four horsemen of the apocalypse
     [SerializeField] VoidEvent strengthColorEvent; 
     [SerializeField] VoidEvent staminColorEvent; 
