@@ -77,7 +77,7 @@ public class RythmTest : MonoBehaviour
 
 			float midpoint = (beats[current].setOffTime * speedMod) * 0.5f;
 
-			if (Input.GetMouseButtonDown(0))
+			if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
 			{
                 float test = 0;
 

@@ -78,7 +78,7 @@ public class MeteorMinigame : MonoBehaviour
             motion = Mathf.Lerp(motion, desiredMotion, 0.75f * Time.deltaTime);
 
             playerMotion = Mathf.Lerp(playerMotion, 0, (playerMotion/motion) * Time.deltaTime);
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(0))
 			{
 				playerMotion += powerlevel;
 				bounceEvent.RaiseEvent(0.15f + Mathf.Abs(-0.5f + 1f * (position / 100f)));
