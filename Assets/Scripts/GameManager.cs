@@ -154,6 +154,8 @@ public class GameManager : MonoBehaviour
         state = GameState.Menu;
         Title_Screen.SetActive(false);
         Menu_Screen.SetActive(true);
+        IdleMain.SetActive(true);
+        
     }
 
     public void ToFinale()
