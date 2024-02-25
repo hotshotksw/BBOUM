@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class MeteorMinigame : MonoBehaviour
 {
-    [SerializeField] int powerlevel;
+    [SerializeField] FloatVariable strength;
+    [SerializeField] FloatVariable stamina;
+    [SerializeField] FloatVariable health;
+    [SerializeField] FloatVariable friendship;
+
+    [SerializeField] float powerlevel;
 	[SerializeField] float playerMotion;
 
     [SerializeField] float desiredMotion;
@@ -14,7 +19,7 @@ public class MeteorMinigame : MonoBehaviour
 
     [SerializeField] float position;
 
-    [SerializeField] bool friendship;
+    [SerializeField] bool friendshipActive;
     [SerializeField] float frienshipPower;
 
     [SerializeField] Transform winpos;
@@ -56,7 +61,7 @@ public class MeteorMinigame : MonoBehaviour
                 motion = playerMotion;
 				playerMotion += frienshipPower;
 				powerlevel *= 2;
-				friendship = false;
+				friendshipActive = false;
 			}
 		}
     }
