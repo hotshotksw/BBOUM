@@ -56,7 +56,7 @@ public class MeteorMinigame : MonoBehaviour
 				playerMotion += powerlevel;
 			}
 
-			if (position > 90f && friendship)
+			if (position > 90f && friendshipActive)
 			{
                 motion = playerMotion;
 				playerMotion += frienshipPower;
