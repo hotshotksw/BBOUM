@@ -30,6 +30,8 @@ public class MeteorMinigame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         desiredMotion = desiredMotion + (powerlevel/2);
         motion = desiredMotion * (powerlevel/100);
         speedmod = 0.1f;
