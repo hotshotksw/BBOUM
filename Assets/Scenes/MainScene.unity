@@ -7163,11 +7163,7 @@ MonoBehaviour:
   newBeatEvent: {fileID: 11400000, guid: 27c4d51baa14d4b40b84af5d091d95bf, type: 2}
   beats:
   - setOffTime: 0.8
-    audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
-    stringtopass: A1
-    beatStrength: 0.5
-  - setOffTime: 0.8
-    audio: {fileID: 8300000, guid: cb089be6e45db8e479ab7ad22577ce62, type: 3}
+    audio: {fileID: 8300000, guid: cbb0b0980cf61e04cbff54ab65eb4e33, type: 3}
     stringtopass: A1
     beatStrength: 0.5
   audioSource: {fileID: 1600733986}
