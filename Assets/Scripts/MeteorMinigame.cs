@@ -52,12 +52,6 @@ public class MeteorMinigame : MonoBehaviour
             friendshipActive = true;
         }
 
-        strength.value = 0;
-        stamina.value = 0;
-        health.value = 0;
-        friendship.value = 0;
-
-
         position = 40;
         movingPower = 0;
 

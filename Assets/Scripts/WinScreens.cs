@@ -64,6 +64,11 @@ public class WinScreens : MonoBehaviour
 			useBaseWinScreen = false;
 		}
 
+		strength.value = 0;
+		stamina.value = 0;
+		health.value = 0;
+		friendship.value = 0;
+
 		if (useBaseWinScreen)
 		{
 			availableLayouts.Add(layout[4]);
