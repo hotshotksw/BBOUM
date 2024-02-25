@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class BeatBar : MonoBehaviour

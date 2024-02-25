@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Meteor_Minigame;
     [SerializeField] GameObject Meteor_Cutscene;
 	[SerializeField] GameObject beatBar;
+	[SerializeField] GameObject buttonmash;
 
 	[Header("Events")]
     //[SerializeField] GameObjectEvent MinigameEndEvent; // Event that, when raised, ends the minigame
@@ -194,18 +194,21 @@ public class GameManager : MonoBehaviour
 
     public void ToLoseScreen()
     {
+        buttonmash.SetActive(false);
         Lose_Screen.SetActive(true);
         Meteor_Minigame.SetActive(false);
     }
 
     public void ToWinScreen()
     {
+		buttonmash.SetActive(false);
 		Win_Screen.SetActive(true);
 		Meteor_Minigame.SetActive(false);
 	}
 
     public void ToMeteor()
     {
+        buttonmash.SetActive(true);
         Meteor_Cutscene.SetActive(false);
         Meteor_Minigame.SetActive(true);
     }
