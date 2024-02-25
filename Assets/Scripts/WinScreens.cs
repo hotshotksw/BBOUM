@@ -28,9 +28,11 @@ public class WinScreens : MonoBehaviour
 	[SerializeField] private FloatVariable stamina;
 	[SerializeField] private FloatVariable health;
 	[SerializeField] private FloatVariable friendship;
+	[SerializeField] private AudioSource winSound;
 
 	private void OnEnable()
 	{
+		winSound.Play();
 		availableLayouts = new List<layouts>();
 		useBaseWinScreen = true;
 
