@@ -5646,6 +5646,7 @@ MonoBehaviour:
   Title_Screen: {fileID: 1409946414}
   Menu_Screen: {fileID: 1982160913}
   End_Screen: {fileID: 1492217380}
+  IdleMain: {fileID: 1495479471}
   Game_Buttons:
   - {fileID: 758498390}
   - {fileID: 842412421}

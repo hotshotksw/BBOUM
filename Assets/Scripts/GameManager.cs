@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Title_Screen;
     [SerializeField] GameObject Menu_Screen;
     [SerializeField] GameObject End_Screen;
+    [SerializeField] GameObject IdleMain;
     // Object for buttons, can grab them all with this??
     [SerializeField] List<GameObject> Game_Buttons; // List of buttons
 
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
     public void ToHealthGame()
     {
         disableButtons();
+        IdleMain.SetActive(false);
         Health_Minigame.SetActive(true);
         healthColorEvent.RaiseEvent(); //green
         state = GameState.Minigame;
@@ -105,21 +107,24 @@ public class GameManager : MonoBehaviour
     public void ToStrengthGame()
     {
         disableButtons();
-        Strength_Minigame.SetActive(true);
+		IdleMain.SetActive(false);
+		Strength_Minigame.SetActive(true);
 		strengthColorEvent.RaiseEvent(); //orange
 		state = GameState.Minigame;
     }
     public void ToStaminaGame()
     {
         disableButtons();
-        Stamina_Minigame?.SetActive(true);
+		IdleMain.SetActive(false);
+		Stamina_Minigame?.SetActive(true);
 		staminColorEvent.RaiseEvent(); //blue
 		state = GameState.Minigame;
     }
     public void ToFriendshipGame()
     {
         disableButtons();
-        Friendship_Minigame.SetActive(true);
+		IdleMain.SetActive(false);
+		Friendship_Minigame.SetActive(true);
 		friendshipColorEvent.RaiseEvent(); //pink
 		state = GameState.Minigame;
     }
@@ -133,8 +138,9 @@ public class GameManager : MonoBehaviour
         Friendship_Minigame.SetActive(false);
 
         enableButtons();
+		IdleMain.SetActive(true);
 
-        state = GameState.Menu;
+		state = GameState.Menu;
     }
     public void ToTitle()
     {
