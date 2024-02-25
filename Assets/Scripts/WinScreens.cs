@@ -7,15 +7,18 @@ using UnityEngine.UI;
 public class WinScreens : MonoBehaviour
 {
 	[SerializeField] private Image image;
-	[SerializeField] private Image background;
 
 	[SerializeField] private bool useBaseWinScreen;
+	[SerializeField] private VoidEvent strengthColorEvent;
+	[SerializeField] private VoidEvent staminaColorEvent;
+	[SerializeField] private VoidEvent healthColorEvent;
+	[SerializeField] private VoidEvent friendshipColorEvent;
+	[SerializeField] private VoidEvent baseColorEvent;
 
 	[Serializable]
 	struct layouts
 	{
 		public GameObject buttonsandtext;
-		public Color backgroundColor;
 		public Sprite image;
 	}
 
@@ -33,6 +36,10 @@ public class WinScreens : MonoBehaviour
 	private void OnEnable()
 	{
 		winSound.Play();
+		foreach (layouts layout in availableLayouts)
+		{
+			layout.buttonsandtext.SetActive(false);
+		}
 		availableLayouts = new List<layouts>();
 		useBaseWinScreen = true;
 
@@ -91,15 +98,24 @@ public class WinScreens : MonoBehaviour
 
 	public void SetUpLayout()
 	{
-		if (availableLayouts[selected].image)
-		{
-			image.sprite = availableLayouts[selected].image;
-			image.color = Color.white;
-		} else
-		{
-			image.color = availableLayouts[selected].backgroundColor;
+		image.sprite = availableLayouts[selected].image;
+		switch (selected) {
+			case 0:
+				strengthColorEvent.RaiseEvent();
+				break;
+			case 1:
+				staminaColorEvent.RaiseEvent();
+				break;
+			case 2:
+				healthColorEvent.RaiseEvent();
+				break;
+			case 3:
+				friendshipColorEvent.RaiseEvent();
+				break;
+			case 4:
+				baseColorEvent.RaiseEvent();
+				break;
 		}
-		background.color = availableLayouts[selected].backgroundColor;
 		availableLayouts[selected].buttonsandtext.SetActive(true);
 	}
 }
