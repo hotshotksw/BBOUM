@@ -8,6 +8,7 @@ public class MeteorMinigame : MonoBehaviour
     [SerializeField] FloatVariable stamina;
     [SerializeField] FloatVariable health;
     [SerializeField] FloatVariable friendship;
+    [SerializeField] int maxlevelpower;
 
     [SerializeField] float powerlevel;
 	[SerializeField] float playerMotion;
@@ -28,11 +29,21 @@ public class MeteorMinigame : MonoBehaviour
     [SerializeField] float speedmod = 0.1f;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+        powerlevel = 1;
+        powerlevel += (Mathf.Min(strength.value, 40)/40) * maxlevelpower;
+        powerlevel += (Mathf.Min(stamina.value, 40) / 40) * maxlevelpower;
+        powerlevel += (Mathf.Min(health.value, 40) / 40) * maxlevelpower;
+        powerlevel += (Mathf.Min(friendship.value, 40) / 40) * maxlevelpower;
+        if (friendship.value >= 40)
+        {
+            friendshipActive = true;
+        }
 
+        position = 40;
 
-        desiredMotion = desiredMotion + (powerlevel/2);
+        desiredMotion = 200 + (powerlevel/2);
         motion = desiredMotion * (powerlevel/100);
         speedmod = 0.1f;
     }
