@@ -4574,6 +4574,7 @@ GameObject:
   - component: {fileID: 912847322}
   - component: {fileID: 912847321}
   - component: {fileID: 912847324}
+  - component: {fileID: 912847325}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -4743,6 +4744,34 @@ MonoBehaviour:
       - m_Target: {fileID: 912847318}
         m_TargetAssemblyTypeName: BackgroundColor, Assembly-CSharp
         m_MethodName: OnFinalChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &912847325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912847317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cb5c59cc826334a900d4d26b22c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 760bbf48f398e6e49950dda63106ab3b, type: 2}
+  listener:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 912847318}
+        m_TargetAssemblyTypeName: BackgroundColor, Assembly-CSharp
+        m_MethodName: OnDefaultChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6787,7 +6816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71d8d13bef9cd9b498b3784986d46291, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7161,7 +7190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1377881460
 RectTransform:
   m_ObjectHideFlags: 0

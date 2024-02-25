@@ -31,6 +31,11 @@ public class BackgroundColor : MonoBehaviour
         tiles2.color = Color.Lerp(tiles2.color, color, Time.deltaTime * 2);
     }
 
+	public void OnDefaultChange()
+	{
+		color = colorArray[0];
+	}
+
 	public void OnStrengthChange()
 	{
 		color = colorArray[1];
