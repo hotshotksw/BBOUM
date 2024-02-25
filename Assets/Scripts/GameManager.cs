@@ -31,7 +31,10 @@ public class GameManager : MonoBehaviour
         EndScreen // -> End Screen, win OR lose
     }
 
+    [Header("Information")]
     public GameState state = GameState.Menu;
+
+    bool timerStarted = false;
 
     void Start()
     {
@@ -39,6 +42,7 @@ public class GameManager : MonoBehaviour
         Strength_Minigame.SetActive(false);
         Stamina_Minigame.SetActive(false);
         Friendship_Minigame.SetActive(false);
+        OnEnable();
     }
 
     void Update()
@@ -52,12 +56,13 @@ public class GameManager : MonoBehaviour
                 }
             case GameState.Menu:
                 {
+                    if (!timerStarted) EventManager.OnTimerStart();
                     break;
                 }
             case GameState.Minigame:
                 {
 
-                    if(Input.GetKeyDown(KeyCode.Space))
+                    if(Input.GetKeyDown(KeyCode.Q))
                     {
                         OnExitMinigame();
                     }
@@ -72,6 +77,10 @@ public class GameManager : MonoBehaviour
                 {
                     break;
                 }
+        }
+        if(timerStarted)
+        {
+            EventManager.OnTimerUpdate(-Time.deltaTime);
         }
     }
 
@@ -156,5 +165,16 @@ public class GameManager : MonoBehaviour
                 
             }
         }
+    }
+
+    // Timer Garbage
+
+    private void OnEnable()
+    {
+        EventManager.TimerStop += EventManagerOnTimerStop;
+    }
+    private void EventManagerOnTimerStop()
+    {
+        ToFinale();
     }
 }
