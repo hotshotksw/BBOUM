@@ -75,12 +75,6 @@ public class GameManager : MonoBehaviour
                 }
             case GameState.Minigame:
                 {
-
-                    if(Input.GetKeyDown(KeyCode.Q))
-                    {
-                        OnExitMinigame();
-                    }
-
                     break;
                 }
             case GameState.Finale:
@@ -194,13 +188,15 @@ public class GameManager : MonoBehaviour
 
     public void ToLoseScreen()
     {
-
+        Lose_Screen.SetActive(true);
+        Meteor_Minigame.SetActive(false);
     }
 
     public void ToWinScreen()
     {
-
-    }
+		Win_Screen.SetActive(true);
+		Meteor_Minigame.SetActive(false);
+	}
 
     public void ToMeteor()
     {
