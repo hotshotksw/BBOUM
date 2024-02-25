@@ -7,11 +7,9 @@ public class Cutscene : MonoBehaviour
 	[SerializeField] Animator animator;
 	[SerializeField] private AudioSource music;
 	[SerializeField] VoidEvent endCutscene;
-	[SerializeField] GameObject beatBar;
 
 	public void StartCutscene()
 	{
-		beatBar.SetActive(false);
 		animator.SetTrigger("Start");
 		music.Play();
 	}

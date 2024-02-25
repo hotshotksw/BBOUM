@@ -23,8 +23,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Friendship_Minigame;
     [SerializeField] GameObject Meteor_Minigame;
     [SerializeField] GameObject Meteor_Cutscene;
+	[SerializeField] GameObject beatBar;
 
-    [Header("Events")]
+	[Header("Events")]
     //[SerializeField] GameObjectEvent MinigameEndEvent; // Event that, when raised, ends the minigame
     [SerializeField] VoidEvent healthColorEvent; //the four horsemen of the apocalypse
     [SerializeField] VoidEvent strengthColorEvent; 
@@ -155,18 +156,21 @@ public class GameManager : MonoBehaviour
         Title_Screen.SetActive(false);
         Menu_Screen.SetActive(true);
         IdleMain.SetActive(true);
-        
-    }
+		beatBar.SetActive(true);
+
+	}
 
     public void ToFinale()
     {
-        state = GameState.Finale;
+		beatBar.SetActive(false);
+		state = GameState.Finale;
 		IdleMain.SetActive(false);
 		Menu_Screen.SetActive(false);
 		finalColorEvent.RaiseEvent();
 		Meteor_Cutscene.SetActive(true);
         startMeteorCutscene.RaiseEvent();
-        if (Health_Minigame.activeSelf)
+		beatBar.SetActive(false);
+		if (Health_Minigame.activeSelf)
         {
 			Health_Minigame.GetComponent<RythmTest>().ForceStop();
 			Health_Minigame.SetActive(false);

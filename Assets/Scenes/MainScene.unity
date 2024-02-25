@@ -9500,6 +9500,7 @@ MonoBehaviour:
   Friendship_Minigame: {fileID: 2105081366}
   Meteor_Minigame: {fileID: 1912204571}
   Meteor_Cutscene: {fileID: 1954872585}
+  beatBar: {fileID: 400938389}
   healthColorEvent: {fileID: 11400000, guid: 5a4fd5d06923ff243b6f6771756a89c0, type: 2}
   strengthColorEvent: {fileID: 11400000, guid: 7e07ca2916b768c4f89b40e836829100, type: 2}
   staminColorEvent: {fileID: 11400000, guid: 8b2b20b592d5b60478982d285da17fb9, type: 2}
@@ -11007,7 +11008,6 @@ MonoBehaviour:
   animator: {fileID: 1954872588}
   music: {fileID: 1954872587}
   endCutscene: {fileID: 11400000, guid: ad3fcc9d1ea542347a0cc712ccc006c0, type: 2}
-  beatBar: {fileID: 400938389}
 --- !u!4 &1954872590
 Transform:
   m_ObjectHideFlags: 0
