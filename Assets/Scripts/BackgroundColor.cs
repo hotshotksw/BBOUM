@@ -18,7 +18,7 @@ public class BackgroundColor : MonoBehaviour
 		colorArray[0] = new Color32(126, 218, 229, 255); //default blue
 		colorArray[1] = new Color32(255, 157, 46, 255); //orange strength
 		colorArray[2] = new Color32(149, 255, 137, 255); //green health
-		colorArray[3] = new Color32(57, 157, 46, 255); //blue stamina
+		colorArray[3] = new Color32(76, 104, 205, 255); //blue stamina
 		colorArray[4] = new Color32(255, 103, 190, 255); //pink friendship
 		colorArray[5] = new Color32(174, 64, 54, 255); //red final
 
