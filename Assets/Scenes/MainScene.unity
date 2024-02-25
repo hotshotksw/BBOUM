@@ -7173,8 +7173,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1341835614}
   - {fileID: 33468071}
+  - {fileID: 1341835614}
   - {fileID: 1625749752}
   - {fileID: 235248498}
   - {fileID: 1624202537}
@@ -7268,16 +7268,16 @@ MonoBehaviour:
   useBaseWinScreen: 0
   layout:
   - buttonsandtext: {fileID: 1624202536}
-    backgroundColor: {r: 0, g: 0, b: 0, a: 1}
+    backgroundColor: {r: 1, g: 0.80784315, b: 0.41960785, a: 1}
     image: {fileID: 21300000, guid: 67bbc10dd3e346a44817512d311cfa4e, type: 3}
   - buttonsandtext: {fileID: 277600692}
-    backgroundColor: {r: 0, g: 0, b: 0, a: 1}
+    backgroundColor: {r: 0.6, g: 0.74509805, b: 1, a: 1}
     image: {fileID: 21300000, guid: 71d8d13bef9cd9b498b3784986d46291, type: 3}
   - buttonsandtext: {fileID: 1616758726}
-    backgroundColor: {r: 0, g: 0, b: 0, a: 1}
+    backgroundColor: {r: 0.73333335, g: 1, b: 0.6, a: 1}
     image: {fileID: 21300000, guid: 47243b778f6335442a2bce1dd133bda2, type: 3}
   - buttonsandtext: {fileID: 1625749751}
-    backgroundColor: {r: 0, g: 0, b: 0, a: 1}
+    backgroundColor: {r: 1, g: 0.68235296, b: 0.7647059, a: 1}
     image: {fileID: 0}
   - buttonsandtext: {fileID: 235248497}
     backgroundColor: {r: 0.35220122, g: 0.35220122, b: 0.35220122, a: 0}
