@@ -30,6 +30,7 @@ public class MeteorMinigame : MonoBehaviour
 
     [SerializeField] VoidEvent winEvent;
     [SerializeField] VoidEvent loseEvent;
+    [SerializeField] FloatEvent bounceEvent;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -70,27 +71,27 @@ public class MeteorMinigame : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				playerMotion += powerlevel;
+				bounceEvent.RaiseEvent(0.15f + Mathf.Abs(-0.5f + 1f * (position / 100f)));
 			}
 
 			if (position > 90f && friendshipActive)
 			{
                 motion = playerMotion;
 				playerMotion += frienshipPower;
-				powerlevel *= 2;
+				powerlevel *= 1.5f;
 				friendshipActive = false;
 			}
 
-
-			if (position > 95f)
+			if (position > 98f)
 			{
-                loseEvent.RaiseEvent();
                 position = 101f;
+                loseEvent.RaiseEvent();
 			}
 
-			if (position < 5f)
+			if (position < 2f)
 			{
-                winEvent.RaiseEvent();
                 position = -1f;
+                winEvent.RaiseEvent();
 			}
 		}
     }

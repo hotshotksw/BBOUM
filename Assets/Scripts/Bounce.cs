@@ -39,6 +39,9 @@ public class Bounce : MonoBehaviour
 		b = scalar * scalar;
 		transform.localScale = baseScale;
 		bounceTimer = Time.deltaTime;
+
+		Debug.Log(scalar);
+
 		scaling = true;
 	}
 }
