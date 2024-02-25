@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] VoidEvent friendshipColorEvent;
     [SerializeField] VoidEvent finalColorEvent;
     [SerializeField] VoidEvent startMeteorCutscene;
+    [SerializeField] VoidEvent resetStatBars;
 
     public enum GameState
     {
@@ -153,11 +154,12 @@ public class GameManager : MonoBehaviour
     public void ToMenu()
     {
         state = GameState.Menu;
-        Title_Screen.SetActive(false);
+		Title_Screen.SetActive(false);
         Menu_Screen.SetActive(true);
         IdleMain.SetActive(true);
 		beatBar.SetActive(true);
-
+		enableButtons();
+        resetStatBars.RaiseEvent();
 	}
 
     public void ToFinale()
@@ -239,6 +241,7 @@ public class GameManager : MonoBehaviour
                 
             }
         }
+        resetStatBars.RaiseEvent();
     }
 
     // Timer Garbage

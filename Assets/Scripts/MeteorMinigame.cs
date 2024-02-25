@@ -58,6 +58,7 @@ public class MeteorMinigame : MonoBehaviour
         }
 
         position = 40;
+        movingPower = 0;
 
         pushin.sprite = nofriend;
 

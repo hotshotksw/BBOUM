@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 36562221}
-  - component: {fileID: 36562225}
   - component: {fileID: 36562223}
   - component: {fileID: 36562224}
   - component: {fileID: 36562222}
@@ -307,7 +306,7 @@ MonoBehaviour:
   listener:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 36562225}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
         m_MethodName: OnUpdateSlider
         m_Mode: 1
@@ -319,21 +318,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &36562225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 36562220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statVariable: {fileID: 11400000, guid: fadba572d94641b4da36262da01cc5ee, type: 2}
-  updateEvent: {fileID: 36562224}
-  slider: {fileID: 2100935665}
 --- !u!1 &50328893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,7 +1240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerType: 0
-  timeToDisplay: 5
+  timeToDisplay: 25
 --- !u!1 &270514881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,6 +2577,7 @@ GameObject:
   - component: {fileID: 529727733}
   - component: {fileID: 529727732}
   - component: {fileID: 529727731}
+  - component: {fileID: 529727734}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -2715,6 +2700,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529727729}
   m_CullTransparentMesh: 1
+--- !u!114 &529727734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529727729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statVariable: {fileID: 11400000, guid: fadba572d94641b4da36262da01cc5ee, type: 2}
+  updateEvent: {fileID: 36562224}
+  slider: {fileID: 2100935665}
 --- !u!1 &575279468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2724,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 575279469}
-  - component: {fileID: 575279474}
   - component: {fileID: 575279471}
   - component: {fileID: 575279473}
   - component: {fileID: 575279472}
@@ -2899,7 +2898,7 @@ MonoBehaviour:
   listener:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 575279474}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
         m_MethodName: OnUpdateSlider
         m_Mode: 1
@@ -2911,21 +2910,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &575279474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575279468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statVariable: {fileID: 11400000, guid: 98321c0e1552b7d479d905f5894156f7, type: 2}
-  updateEvent: {fileID: 575279473}
-  slider: {fileID: 1416609095}
 --- !u!1 &576799566
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,6 +3698,7 @@ GameObject:
   - component: {fileID: 758498394}
   - component: {fileID: 758498393}
   - component: {fileID: 758498392}
+  - component: {fileID: 758498395}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -3836,6 +3821,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758498390}
   m_CullTransparentMesh: 1
+--- !u!114 &758498395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758498390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statVariable: {fileID: 11400000, guid: 34137884df353c2448b519d6080487ad, type: 2}
+  updateEvent: {fileID: 1600733988}
+  slider: {fileID: 2118778137}
 --- !u!1 &772242724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,6 +4420,7 @@ GameObject:
   - component: {fileID: 842412425}
   - component: {fileID: 842412424}
   - component: {fileID: 842412423}
+  - component: {fileID: 842412426}
   m_Layer: 5
   m_Name: Strength
   m_TagString: Untagged
@@ -4542,6 +4543,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842412421}
   m_CullTransparentMesh: 1
+--- !u!114 &842412426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842412421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statVariable: {fileID: 11400000, guid: 98321c0e1552b7d479d905f5894156f7, type: 2}
+  updateEvent: {fileID: 575279473}
+  slider: {fileID: 1416609095}
 --- !u!1 &867729898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4554,6 +4570,7 @@ GameObject:
   - component: {fileID: 867729902}
   - component: {fileID: 867729901}
   - component: {fileID: 867729900}
+  - component: {fileID: 867729903}
   m_Layer: 5
   m_Name: Friendship
   m_TagString: Untagged
@@ -4676,6 +4693,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867729898}
   m_CullTransparentMesh: 1
+--- !u!114 &867729903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867729898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statVariable: {fileID: 11400000, guid: 974bde0d0f06e7c4b82f3202c63d9417, type: 2}
+  updateEvent: {fileID: 2105081370}
+  slider: {fileID: 1654321464}
 --- !u!1 &912847317
 GameObject:
   m_ObjectHideFlags: 0
@@ -8903,7 +8935,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1600733985}
-  - component: {fileID: 1600733989}
   - component: {fileID: 1600733987}
   - component: {fileID: 1600733988}
   - component: {fileID: 1600733986}
@@ -9078,7 +9109,7 @@ MonoBehaviour:
   listener:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1600733989}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
         m_MethodName: OnUpdateSlider
         m_Mode: 1
@@ -9090,21 +9121,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1600733989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600733984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statVariable: {fileID: 11400000, guid: 34137884df353c2448b519d6080487ad, type: 2}
-  updateEvent: {fileID: 1600733988}
-  slider: {fileID: 2118778137}
 --- !u!1 &1612583553
 GameObject:
   m_ObjectHideFlags: 0
@@ -9701,6 +9717,7 @@ MonoBehaviour:
   friendshipColorEvent: {fileID: 11400000, guid: 3c425c2bbb2352f47bd1406a50ae3c3e, type: 2}
   finalColorEvent: {fileID: 11400000, guid: a56603d8d48290a489e4c0f057a0c728, type: 2}
   startMeteorCutscene: {fileID: 11400000, guid: 8bf6675e37dca0440b37ce6b0bfc1ab2, type: 2}
+  resetStatBars: {fileID: 11400000, guid: f891f55c10623794f89cd1cc0c976fe5, type: 2}
   timer: {fileID: 239029207}
   state: 1
 --- !u!114 &1642203469
@@ -12191,7 +12208,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2105081367}
-  - component: {fileID: 2105081371}
   - component: {fileID: 2105081369}
   - component: {fileID: 2105081370}
   - component: {fileID: 2105081368}
@@ -12366,7 +12382,7 @@ MonoBehaviour:
   listener:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2105081371}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpdateBar, Assembly-CSharp
         m_MethodName: OnUpdateSlider
         m_Mode: 1
@@ -12378,21 +12394,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2105081371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105081366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538f8da1f0611484ea3765746353e518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statVariable: {fileID: 11400000, guid: 974bde0d0f06e7c4b82f3202c63d9417, type: 2}
-  updateEvent: {fileID: 2105081370}
-  slider: {fileID: 1654321464}
 --- !u!1 &2108661974
 GameObject:
   m_ObjectHideFlags: 0
