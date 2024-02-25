@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("User Interface")]
     [SerializeField] GameObject Title_Screen;
+    [SerializeField] GameObject Menu_Screen;
     [SerializeField] GameObject End_Screen;
     // Object for buttons, can grab them all with this??
     [SerializeField] List<GameObject> Game_Buttons; // List of buttons
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     }
 
     [Header("Information")]
+    [SerializeField] Timer timer;
     public GameState state = GameState.Menu;
 
     bool timerStarted = false;
@@ -56,6 +58,8 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Title:
                 {
+                    timer.timeToDisplay = 300.0f;
+                    Title_Screen.SetActive(true);
                     break;
                 }
             case GameState.Menu:
@@ -79,6 +83,7 @@ public class GameManager : MonoBehaviour
                 }
             case GameState.EndScreen:
                 {
+                    End_Screen.SetActive(true);
                     break;
                 }
         }
@@ -131,15 +136,25 @@ public class GameManager : MonoBehaviour
 
         state = GameState.Menu;
     }
+    public void ToTitle()
+    {
+        state = GameState.Title;
+        End_Screen.SetActive(false);
+        Menu_Screen.SetActive(false);
+    }
+
+    public void ToMenu()
+    {
+        state = GameState.Menu;
+        Title_Screen.SetActive(false);
+        Menu_Screen.SetActive(true);
+    }
 
     public void ToFinale()
     {
         state = GameState.Finale;
-    }
-
-    public void ToTitle()
-    {
-        state = GameState.Title;
+        Menu_Screen.SetActive(false);
+        ToEndScreen();
     }
 
     public void ToEndScreen()
@@ -183,6 +198,7 @@ public class GameManager : MonoBehaviour
     }
     private void EventManagerOnTimerStop()
     {
+        Debug.Log("Time ran out!");
         ToFinale();
     }
 }
