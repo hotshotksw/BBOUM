@@ -772,7 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1146,6 +1146,7 @@ MonoBehaviour:
     beatStrength: 0.5
   audioSource: {fileID: 411534501}
   InitialTime: 15
+  startDelay: 0
   beatTime: 0
   current: 0
   speedMod: 1
@@ -1660,7 +1661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575279469}
   - component: {fileID: 575279471}
-  - component: {fileID: 575279470}
+  - component: {fileID: 575279472}
   m_Layer: 0
   m_Name: StrengthMinigame
   m_TagString: Untagged
@@ -1684,7 +1685,41 @@ Transform:
   - {fileID: 1972696521}
   m_Father: {fileID: 137596769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &575279470
+--- !u!114 &575279471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575279468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e93782e2da1ed479f134741e8bf472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Metronome: {fileID: 8300000, guid: b8d5b46f49712cd4f87a0bdcfec30a19, type: 3}
+  beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
+  beatFloatEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
+  newBeatEvent: {fileID: 11400000, guid: 27c4d51baa14d4b40b84af5d091d95bf, type: 2}
+  beats:
+  - setOffTime: 1
+    audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
+    stringtopass: A1
+    beatStrength: 0.2
+  audioSource: {fileID: 575279472}
+  InitialTime: 15
+  startDelay: 0
+  beatTime: 0
+  current: 0
+  speedMod: 1
+  start: 0
+  totalLevel: 0
+  beatActivated: 0
+  rewardLevels: {fileID: 11400000, guid: 98321c0e1552b7d479d905f5894156f7, type: 2}
+  text: {fileID: 707094740}
+  EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
+  countdown: {fileID: 1050596988}
+--- !u!82 &575279472
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1694,11 +1729,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: a97d427fcd3e52c429592850f48289a1, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1780,39 +1815,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &575279471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575279468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e93782e2da1ed479f134741e8bf472, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Metronome: {fileID: 8300000, guid: b8d5b46f49712cd4f87a0bdcfec30a19, type: 3}
-  beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
-  beatFloatEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
-  newBeatEvent: {fileID: 11400000, guid: 27c4d51baa14d4b40b84af5d091d95bf, type: 2}
-  beats:
-  - setOffTime: 1
-    audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
-    stringtopass: A1
-    beatStrength: 0.2
-  audioSource: {fileID: 575279470}
-  InitialTime: 5
-  beatTime: 0
-  current: 0
-  speedMod: 1
-  start: 0
-  totalLevel: 0
-  beatActivated: 0
-  rewardLevels: {fileID: 11400000, guid: 98321c0e1552b7d479d905f5894156f7, type: 2}
-  text: {fileID: 707094740}
-  EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
-  countdown: {fileID: 1050596988}
 --- !u!1 &582588849
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,7 +4480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1409946415
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4685,7 +4687,7 @@ RectTransform:
   m_Father: {fileID: 458621376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5438,6 +5440,7 @@ MonoBehaviour:
     beatStrength: 0.5
   audioSource: {fileID: 1600733986}
   InitialTime: 15
+  startDelay: 0
   beatTime: 0
   current: 0
   speedMod: 1
@@ -5481,7 +5484,7 @@ RectTransform:
   m_Father: {fileID: 1273932997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5813,7 +5816,7 @@ RectTransform:
   m_Father: {fileID: 457886569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5963,7 +5966,7 @@ RectTransform:
   m_Father: {fileID: 1393896752}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6298,7 +6301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1982160914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6787,8 +6790,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 3df0429c7d2542c4fa31ba43717c7e64, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6890,12 +6893,13 @@ MonoBehaviour:
   beatFloatEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
   newBeatEvent: {fileID: 11400000, guid: 27c4d51baa14d4b40b84af5d091d95bf, type: 2}
   beats:
-  - setOffTime: 1
+  - setOffTime: 1.6
     audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
     stringtopass: A1
     beatStrength: 0.5
   audioSource: {fileID: 2105081368}
   InitialTime: 15
+  startDelay: 0.8
   beatTime: 0
   current: 0
   speedMod: 1

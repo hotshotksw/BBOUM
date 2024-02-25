@@ -25,6 +25,7 @@ public class RythmTest : MonoBehaviour
     [SerializeField] List<Beat> beats; // list of repeating beats
     [SerializeField] AudioSource audioSource;
     [SerializeField] float InitialTime = 15.0f; // initial time spent in the minigame
+    [SerializeField] float startDelay = 0f; // initial time spent in the minigame
     float turnTime; // the time that is spent in the minigame
     [SerializeField] float beatTime = 0; // time till the next beat plays
     [SerializeField] int current = 0; // current beat to be played
@@ -51,7 +52,6 @@ public class RythmTest : MonoBehaviour
 		current = 0;
 		earlyBeat = false;
 		beatTime = beats[current].setOffTime;
-		audioSource.Play();
 		//newBeatEvent.RaiseEvent(beatTime * 2);
 	}
 
@@ -188,6 +188,10 @@ public class RythmTest : MonoBehaviour
 			countdown.NextSprite();
 		}
 		countdown.gameObject.SetActive(false);
+		audioSource.Play();
+		yield return new WaitForSeconds(startDelay);
+
 		Activate();
+		
 	}
 }
