@@ -32,6 +32,8 @@ public class MeteorMinigame : MonoBehaviour
     [SerializeField] VoidEvent loseEvent;
     [SerializeField] FloatEvent bounceEvent;
 
+    [SerializeField] private AudioSource music;
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -47,7 +49,9 @@ public class MeteorMinigame : MonoBehaviour
 
         position = 40;
 
-        desiredMotion = 200 + (powerlevel/2);
+		music.Play();
+
+		desiredMotion = 200 + (powerlevel/2);
         motion = desiredMotion * (powerlevel/100);
         speedmod = 0.1f;
     }
@@ -85,13 +89,15 @@ public class MeteorMinigame : MonoBehaviour
 			if (position > 98f)
 			{
                 position = 101f;
-                loseEvent.RaiseEvent();
+				music.Stop();
+				loseEvent.RaiseEvent();
 			}
 
 			if (position < 2f)
 			{
                 position = -1f;
-                winEvent.RaiseEvent();
+				music.Stop();
+				winEvent.RaiseEvent();
 			}
 		}
     }
