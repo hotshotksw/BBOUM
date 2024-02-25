@@ -168,6 +168,26 @@ public class GameManager : MonoBehaviour
 		finalColorEvent.RaiseEvent();
 		Meteor_Cutscene.SetActive(true);
         startMeteorCutscene.RaiseEvent();
+        if (Health_Minigame.activeSelf)
+        {
+			Health_Minigame.GetComponent<RythmTest>().ForceStop();
+			Health_Minigame.SetActive(false);
+		}
+        if (Strength_Minigame.activeSelf)
+        {
+            Strength_Minigame.SetActive(false);
+			Strength_Minigame.GetComponent<RythmTest>().ForceStop();
+		}
+        if (Stamina_Minigame.activeSelf)
+        {
+            Stamina_Minigame.SetActive(false);
+			Stamina_Minigame.GetComponent<RythmTest>().ForceStop();
+		}
+        if (Friendship_Minigame.activeSelf)
+        {
+            Friendship_Minigame.SetActive(false);
+			Friendship_Minigame.GetComponent<RythmTest>().ForceStop();
+		}
 		//ToEndScreen();
 	}
 
