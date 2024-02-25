@@ -135,7 +135,7 @@ public class RythmTest : MonoBehaviour
 				beatFloatEvent.RaiseEvent(beats[current].beatStrength);
 				if (Metronome)
 				{
-					audioSource.PlayOneShot(Metronome);
+					//audioSource.PlayOneShot(Metronome);
 				}
 				current++;
                 if (current >= beats.Count)
