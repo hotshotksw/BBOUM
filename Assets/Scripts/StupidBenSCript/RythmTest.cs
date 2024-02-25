@@ -41,6 +41,8 @@ public class RythmTest : MonoBehaviour
 
 	[SerializeField] VoidEvent EndMinigameEvent;
 
+	[SerializeField] SpriteSequencer countdown;
+
     public void Activate()
     {
 		start = true;
@@ -54,11 +56,6 @@ public class RythmTest : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !start)
-        {
-            Activate();
-        }
-
         if (start)
         {
             turnTime -= Time.deltaTime;
@@ -164,4 +161,21 @@ public class RythmTest : MonoBehaviour
 			}
 		}
     }
+
+	private void OnEnable()
+	{
+		countdown.gameObject.SetActive(true);
+		StartCoroutine(Countdown());
+	}
+
+	IEnumerator Countdown()
+	{
+		for (int t = 3; t > 0; t--)
+		{
+			yield return new WaitForSeconds(1);
+			countdown.NextSprite();
+		}
+		countdown.gameObject.SetActive(false);
+		Activate();
+	}
 }
