@@ -3,11 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-/// <summary>
-/// IntEvent - A simple observer pattern implementation using ScriptableObject.
-/// </summary>
 [CreateAssetMenu(menuName = "Events/Int Event")]
-public class IntEvent : EventBase<int>
+public class IntEvent : ScriptableObjectBase
 {
-	//
+	public UnityAction<int> onEventRaised;
+
+	public void RaiseEvent(int value)
+	{
+		onEventRaised?.Invoke(value); //? null check
+	}
+
+	public void Subscribe(UnityAction<int> function)
+	{
+		onEventRaised += function;
+	}
+
+	public void Unsubscribe(UnityAction<int> function)
+	{
+		onEventRaised -= function;
+	}
 }

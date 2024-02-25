@@ -9,7 +9,7 @@ public class BackgroundColor : MonoBehaviour
     [SerializeField] SpriteRenderer tiles1;
     [SerializeField] SpriteRenderer tiles2;
 
-    public Color[] colorArray;
+    Color[] colorArray;
 
 	private void Start()
 	{
@@ -26,12 +26,27 @@ public class BackgroundColor : MonoBehaviour
 
 	void Update()
     {
-        tiles1.color = Color.Lerp(tiles1.color, color, Time.deltaTime);
-        tiles2.color = Color.Lerp(tiles2.color, color, Time.deltaTime);
+        tiles1.color = Color.Lerp(tiles1.color, color, Time.deltaTime * 2);
+        tiles2.color = Color.Lerp(tiles2.color, color, Time.deltaTime * 2);
     }
 
-    public void OnColorChange(int colorNum)
-    {
-        color = colorArray[colorNum];
-    }
+	public void OnStrengthChange()
+	{
+		color = colorArray[1];
+	}
+
+	public void OnHealthChange()
+	{
+		color = colorArray[2];
+	}
+
+	public void OnStaminaChange()
+	{
+		color = colorArray[3];
+	}
+
+	public void OnFriendshipChange()
+	{
+		color = colorArray[4];
+	}
 }

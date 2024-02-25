@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] GameObjectEvent MinigameEndEvent; // Event that, when raised, ends the minigame
+    [SerializeField] VoidEvent healthColorEvent; //the four horsemen of the apocalypse
+    [SerializeField] VoidEvent strengthColorEvent; 
+    [SerializeField] VoidEvent staminColorEvent; 
+    [SerializeField] VoidEvent friendshipColorEvent; 
 
     public enum GameState
     {
@@ -90,25 +94,29 @@ public class GameManager : MonoBehaviour
     {
         disableButtons();
         Health_Minigame.SetActive(true);
+        healthColorEvent.RaiseEvent(); //green
         state = GameState.Minigame;
     }
     public void ToStrengthGame()
     {
         disableButtons();
         Strength_Minigame.SetActive(true);
-        state = GameState.Minigame;
+		strengthColorEvent.RaiseEvent(); //orange
+		state = GameState.Minigame;
     }
     public void ToStaminaGame()
     {
         disableButtons();
         Stamina_Minigame?.SetActive(true);
-        state = GameState.Minigame;
+		staminColorEvent.RaiseEvent(); //blue
+		state = GameState.Minigame;
     }
     public void ToFriendshipGame()
     {
         disableButtons();
         Friendship_Minigame.SetActive(true);
-        state = GameState.Minigame;
+		friendshipColorEvent.RaiseEvent(); //pink
+		state = GameState.Minigame;
     }
 
     // Function to end minigame and exit minigame state, going back to the menu
