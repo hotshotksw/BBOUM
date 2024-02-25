@@ -38,11 +38,10 @@ public class RythmTest : MonoBehaviour
 
     public FloatVariable rewardLevels; // stat that is rewards with level
 
-    public TMP_Text text;// replace with dedicated ranking thing
-
 	[SerializeField] VoidEvent EndMinigameEvent;
 
 	[SerializeField] SpriteSequencer countdown;
+	[SerializeField] EvaluationScript evaluation;
 
     public void Activate()
     {
@@ -113,26 +112,9 @@ public class RythmTest : MonoBehaviour
 					}
 					test = (2 * test) - 1;
 
-					string howgood = "Bogus";
+					evaluation.Evaluate(test);
 
-					if (test > 0.9f)
-					{
-						howgood = "Ultimate!!!";
-					}
-					else if (test > 0.5f)
-					{
-						howgood = "Nice Form!!";
-					}
-					else if (test > 0.1f)
-					{
-						howgood = "Needs Work!";
-					} else
-					{
-						// if it is bogus
-					}
-
-
-					text.text = beatTime + " / " + (beats[current].setOffTime * speedMod) + "\n" + howgood + ": " + test;
+					//text.text = beatTime + " / " + (beats[current].setOffTime * speedMod) + "\n" + howgood + ": " + test;
 					totalLevel += test;
 					if (totalLevel < 0)
 					{
