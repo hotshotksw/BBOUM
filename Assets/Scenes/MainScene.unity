@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerType: 0
-  timeToDisplay: 5
+  timeToDisplay: 300
 --- !u!1 &290687651
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +974,9 @@ MonoBehaviour:
   motion: 0
   movingPower: 0
   position: 40
+  pushin: {fileID: 0}
+  friend: {fileID: 0}
+  nofriend: {fileID: 0}
   friendshipActive: 0
   frienshipPower: 200
   winpos: {fileID: 1183055877}
@@ -6513,8 +6516,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 2c3443f824e8abc4b9059d73b9fc400d, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6616,8 +6619,12 @@ MonoBehaviour:
   beatFloatEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
   newBeatEvent: {fileID: 11400000, guid: 27c4d51baa14d4b40b84af5d091d95bf, type: 2}
   beats:
-  - setOffTime: 1
+  - setOffTime: 0.8
     audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
+    stringtopass: A1
+    beatStrength: 0.5
+  - setOffTime: 0.8
+    audio: {fileID: 8300000, guid: cb089be6e45db8e479ab7ad22577ce62, type: 3}
     stringtopass: A1
     beatStrength: 0.5
   audioSource: {fileID: 1600733986}
