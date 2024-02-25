@@ -51,6 +51,7 @@ public class RythmTest : MonoBehaviour
 		current = 0;
 		earlyBeat = false;
 		beatTime = beats[current].setOffTime;
+		audioSource.Play();
 		//newBeatEvent.RaiseEvent(beatTime * 2);
 	}
 
@@ -69,6 +70,7 @@ public class RythmTest : MonoBehaviour
                     rewardLevels.value += totalLevel;
                 }
 				// End Minigame
+				audioSource.Stop();
 				EndMinigameEvent.RaiseEvent();
 			}
 
@@ -93,7 +95,10 @@ public class RythmTest : MonoBehaviour
 						}
 						beatEvent.RaiseEvent(beats[prev].stringtopass);
 
-						audioSource.PlayOneShot(beats[prev].audio);
+						if (beats[prev].audio)
+						{
+							audioSource.PlayOneShot(beats[prev].audio);
+						}
 					}
 					else if (midpoint - beatTime > 0)
 					{
@@ -101,7 +106,10 @@ public class RythmTest : MonoBehaviour
 						test = Mathf.Abs((beatTime / midpoint) - 1);
 
 						beatEvent.RaiseEvent(beats[current].stringtopass);
-						audioSource.PlayOneShot(beats[current].audio);
+						if (beats[current].audio)
+						{
+							audioSource.PlayOneShot(beats[current].audio);
+						}
 					}
 					test = (2 * test) - 1;
 
@@ -141,7 +149,10 @@ public class RythmTest : MonoBehaviour
 				}
 				earlyBeat = false;
 				beatFloatEvent.RaiseEvent(beats[current].beatStrength);
-				audioSource.PlayOneShot(Metronome);
+				if (Metronome)
+				{
+					audioSource.PlayOneShot(Metronome);
+				}
 				current++;
                 if (current >= beats.Count)
                 {

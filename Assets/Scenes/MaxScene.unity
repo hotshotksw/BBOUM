@@ -1167,7 +1167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779022972
 Transform:
   m_ObjectHideFlags: 0
@@ -2024,6 +2024,8 @@ MonoBehaviour:
   winpos: {fileID: 76158606}
   losepos: {fileID: 1967588031}
   speedmod: 0.1
+  winEvent: {fileID: 0}
+  loseEvent: {fileID: 0}
 --- !u!212 &1964238786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2301,13 +2303,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e93782e2da1ed479f134741e8bf472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Metronome: {fileID: 8300000, guid: 906d9119d0e4a014696fe1e4f8d8f5f1, type: 3}
+  Metronome: {fileID: 0}
   beatEvent: {fileID: 11400000, guid: a4f9ed5704aa10245a5a3e0cb1938ff1, type: 2}
   beatFloatEvent: {fileID: 11400000, guid: 9933d51868e8aa74992a7f8c7045a75a, type: 2}
   newBeatEvent: {fileID: 11400000, guid: 27c4d51baa14d4b40b84af5d091d95bf, type: 2}
   beats:
   - setOffTime: 1
-    audio: {fileID: 8300000, guid: 2b29b8186dae0054bbe137d85e75329a, type: 3}
+    audio: {fileID: 0}
     stringtopass: A1
     beatStrength: 0.2
   audioSource: {fileID: 7906406410905679511}
@@ -2388,7 +2390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3401486936043909104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2544,11 +2546,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: a97d427fcd3e52c429592850f48289a1, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

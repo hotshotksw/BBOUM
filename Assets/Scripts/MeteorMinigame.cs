@@ -28,6 +28,9 @@ public class MeteorMinigame : MonoBehaviour
 
     [SerializeField] float speedmod = 0.1f;
 
+    [SerializeField] VoidEvent winEvent;
+    [SerializeField] VoidEvent loseEvent;
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -51,7 +54,7 @@ public class MeteorMinigame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (position < 100)
+        if (position < 100 && position > 0)
         {
             speedmod = Mathf.Lerp(speedmod, 1, 0.05f * Time.deltaTime);
 
@@ -75,6 +78,19 @@ public class MeteorMinigame : MonoBehaviour
 				playerMotion += frienshipPower;
 				powerlevel *= 2;
 				friendshipActive = false;
+			}
+
+
+			if (position > 95f)
+			{
+                loseEvent.RaiseEvent();
+                position = 101f;
+			}
+
+			if (position < 5f)
+			{
+                winEvent.RaiseEvent();
+                position = -1f;
 			}
 		}
     }
