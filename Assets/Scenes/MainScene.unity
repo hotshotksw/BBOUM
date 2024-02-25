@@ -1049,6 +1049,7 @@ MonoBehaviour:
   rewardLevels: {fileID: 11400000, guid: 34137884df353c2448b519d6080487ad, type: 2}
   text: {fileID: 707094740}
   EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
+  countdown: {fileID: 0}
 --- !u!4 &411534503
 Transform:
   m_ObjectHideFlags: 0
@@ -1632,6 +1633,7 @@ MonoBehaviour:
   rewardLevels: {fileID: 11400000, guid: 98321c0e1552b7d479d905f5894156f7, type: 2}
   text: {fileID: 707094740}
   EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
+  countdown: {fileID: 0}
 --- !u!1 &610017363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,7 +1797,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 20.06, y: 0, z: 0}
-  m_LocalScale: {x: 0.16703126, y: 0.16703126, z: 0.83515626}
+  m_LocalScale: {x: 0.16703126, y: 0.16703126, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 912847319}
@@ -2537,13 +2539,13 @@ Transform:
   m_GameObject: {fileID: 912847317}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960.0001, y: -465.32, z: 0}
-  m_LocalScale: {x: 1.121168, y: 1.121168, z: 1.121168}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1989578729}
   - {fileID: 622702435}
-  m_Father: {fileID: 1982160914}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &912847320
 MonoBehaviour:
@@ -4030,6 +4032,7 @@ MonoBehaviour:
   rewardLevels: {fileID: 11400000, guid: 34137884df353c2448b519d6080487ad, type: 2}
   text: {fileID: 707094740}
   EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
+  countdown: {fileID: 0}
 --- !u!1 &1633628523
 GameObject:
   m_ObjectHideFlags: 0
@@ -4512,7 +4515,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 912847319}
   - {fileID: 1679989252}
   - {fileID: 842412422}
   - {fileID: 529727730}
@@ -4619,7 +4621,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16703126, y: 0.16703126, z: 0.83515626}
+  m_LocalScale: {x: 0.16703126, y: 0.16703126, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 912847319}
@@ -5018,12 +5020,14 @@ MonoBehaviour:
   rewardLevels: {fileID: 11400000, guid: 974bde0d0f06e7c4b82f3202c63d9417, type: 2}
   text: {fileID: 707094740}
   EndMinigameEvent: {fileID: 11400000, guid: 075c2b2eed7979444baf25262eb5759b, type: 2}
+  countdown: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1642203467}
+  - {fileID: 912847319}
   - {fileID: 1276408954}
   - {fileID: 79342911}
   - {fileID: 137596769}
