@@ -21,13 +21,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Stamina_Minigame;
     [SerializeField] GameObject Friendship_Minigame;
     [SerializeField] GameObject Meteor_Minigame;
+    [SerializeField] GameObject Meteor_Cutscene;
 
     [Header("Events")]
     //[SerializeField] GameObjectEvent MinigameEndEvent; // Event that, when raised, ends the minigame
     [SerializeField] VoidEvent healthColorEvent; //the four horsemen of the apocalypse
     [SerializeField] VoidEvent strengthColorEvent; 
     [SerializeField] VoidEvent staminColorEvent; 
-    [SerializeField] VoidEvent friendshipColorEvent; 
+    [SerializeField] VoidEvent friendshipColorEvent;
+    [SerializeField] VoidEvent finalColorEvent;
+    [SerializeField] VoidEvent startMeteorCutscene;
 
     public enum GameState
     {
@@ -162,11 +165,19 @@ public class GameManager : MonoBehaviour
         state = GameState.Finale;
 		IdleMain.SetActive(false);
 		Menu_Screen.SetActive(false);
+		finalColorEvent.RaiseEvent();
+		Meteor_Cutscene.SetActive(true);
+        startMeteorCutscene.RaiseEvent();
+		//ToEndScreen();
+	}
+
+    public void ToMeteor()
+    {
+        Meteor_Cutscene.SetActive(false);
         Meteor_Minigame.SetActive(true);
-        //ToEndScreen();
     }
 
-    public void ToEndScreen()
+	public void ToEndScreen()
     {
         state = GameState.EndScreen;
     }
