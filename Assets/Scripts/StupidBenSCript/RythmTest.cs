@@ -158,6 +158,17 @@ public class RythmTest : MonoBehaviour
 		}
     }
 
+	public void ForceStop()
+	{
+		start = false;
+		if (rewardLevels)
+		{
+			rewardLevels.value += totalLevel;
+		}
+		// End Minigame
+		audioSource.Stop();
+	}
+
 	private void OnEnable()
 	{
 		countdown.gameObject.SetActive(true);
