@@ -123,6 +123,7 @@ public class RythmTest : MonoBehaviour
 						// if it is bogus
 					}
 
+
 					text.text = beatTime + " / " + (beats[current].setOffTime * speedMod) + "\n" + howgood + ": " + test;
 					totalLevel += test;
 					if (totalLevel < 0)
