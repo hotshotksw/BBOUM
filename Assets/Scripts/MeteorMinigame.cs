@@ -99,6 +99,10 @@ public class MeteorMinigame : MonoBehaviour
 			{
                 position = 101f;
 				music.Stop();
+				strength.value = 0;
+				stamina.value = 0;
+				health.value = 0;
+				friendship.value = 0;
 				loseEvent.RaiseEvent();
 			}
 

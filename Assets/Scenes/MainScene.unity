@@ -3995,7 +3995,7 @@ MonoBehaviour:
   friend: {fileID: 21300000, guid: d9d1d3fd08b4dc44295bce564e761dd5, type: 3}
   nofriend: {fileID: 21300000, guid: 6768282b509af6c4f9a22f2ceade25c3, type: 3}
   friendshipActive: 0
-  frienshipPower: 200
+  frienshipPower: 300
   winpos: {fileID: 1856993382}
   losepos: {fileID: 1794889011}
   speedmod: 0.1
